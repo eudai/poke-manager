@@ -19,7 +19,6 @@ var players = {}
 
 passport.use(new LocalStrategy(function(username,password,done){
 	var player = players[username]
-	if (player) return done(null,player)
 	player = new Player({
 		username: username,
 		password: password,
