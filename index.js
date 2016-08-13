@@ -91,9 +91,9 @@ app.get('/evolve/:id',function(req,res){
 		res.json(error || data)
 	})
 })
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+var port = process.NODE_ENV == 'production' ? 80 : 3000
+app.listen(port, function () {
+  console.log('Server listening...');
 });
 
 
