@@ -1,9 +1,9 @@
 var Long = require('long')
-var api = require('pokemon-go-node-api')
 var _ = require('underscore')
 
 module.exports = function(config){
 
+	var api = require('pokemon-go-node-api')
 	var loggedIn = false
 	var location = config.location
 	var username = config.username
