@@ -93,7 +93,7 @@ app.get('/evolve/:id',function(req,res){
 		res.json(error || data)
 	})
 })
-var port = process.NODE_ENV == 'production' ? 80 : 3000
+var port = process.env.NODE_ENV == 'production' ? 80 : 3000
 app.listen(port, function () {
   	console.log('Server listening...');
 });
