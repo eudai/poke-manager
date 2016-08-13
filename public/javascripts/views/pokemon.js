@@ -80,7 +80,8 @@ App.Views.Pokemon = Backbone.View.extend({
 					message: 'Failed to transfer ' + this.model.get('name') + '.'
 				})
 			}
-
+			this.selected = false
+			this.model.remove()
 		},this))
 	},
 
