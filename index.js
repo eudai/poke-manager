@@ -18,7 +18,6 @@ var players = {}
 
 
 passport.use(new LocalStrategy(function(username,password,done){
-	var player = players[username]
 	player = new Player({
 		username: username,
 		password: password,
@@ -65,6 +64,7 @@ app.get('/login',function(req,res){
 })
 
 app.get('/logout',function(req,res){
+	players[req.user.username] = null
 	req.logout()
 	res.json({
 		logout: true
