@@ -9,9 +9,6 @@ var passport = require('passport')
 var session = require('express-session')
 var favicon = require('serve-favicon')
 var _ = require('underscore')
-
-
-// var GoogleStrategy = require('passport-google-oauth').OAuthStrategy
 var LocalStrategy = require('passport-local').Strategy;
 var app = express()
 var players = {}
@@ -53,7 +50,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static('public'))
-app.use(favicon(__dirname + '/public/pokemon-icon.png'));
+app.use(favicon(__dirname + '/public/images/pokemon-icon.png'));
 
 app.post('/login',passport.authenticate('local'),function(req,res){
 	res.json(req.user)
@@ -95,22 +92,11 @@ app.get('/evolve/:id',function(req,res){
 		res.json(error || data)
 	})
 })
-app.listen(process.env.PORT || 3000, function () {
-  	console.log('Server listening...');
-});
 
+app.listen(process.env.PORT || 3000, function () {
+  	console.log('Server listening...')
+})
 
 process.on('uncaughtException', function(error){
 	if (error) console.error(error)
-});
-
-// initialize()
-
-
-// list
-
-// evolve
-
-// transfer
-
-// rename
+})
