@@ -14,14 +14,16 @@ var app = express()
 var players = {}
 
 
-passport.use(new LocalStrategy(function(username,password,done){
+passport.use(new LocalStrategy({
+	passReqToCallback: true,
+},function(req,username,password,done){
 	player = new Player({
 		username: username,
 		password: password,
-		provider: 'google',
+		provider: req.body.provider,
 		location: {
 			type: 'name',
-			name: 'Columbus, OH'
+			name: req.body.location
 		}
 	})
 	players[player.username] = player

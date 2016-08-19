@@ -1,7 +1,7 @@
 var PokemonList = Backbone.View.extend({
 
 	tagName: 'table',
-	className: 'uk-table uk-table-condensed tablesorter uk-container-center',
+	className: 'uk-table uk-table-condensed uk-table-hover tablesorter',
 
 	initialize: function(){
 		this.collection.on('update',this.render,this)
@@ -22,7 +22,7 @@ var PokemonList = Backbone.View.extend({
 		})
 		var body = new Backbone.View({
 			tagName: 'tbody',
-			className: 'list'
+			className: 'list uk-sortable'
 		})
 		var header = new Backbone.View({
 			tagName: 'tr'
@@ -31,8 +31,8 @@ var PokemonList = Backbone.View.extend({
 			var keys = Object.keys(this.collection.models[0].toJSON())
 			keys = [
 				'Actions',
-				'#',
 				'Image',
+				'#',
 				'Name',
 				'Nickname',
 				'CP',
@@ -40,8 +40,7 @@ var PokemonList = Backbone.View.extend({
 				'Attack',
 				'Defense',
 				'Stamina',
-				'Health',
-				'Favorite'
+				'Health'
 			]
 			keys.forEach(function(key){
 				var cell = new Backbone.View({
@@ -50,6 +49,7 @@ var PokemonList = Backbone.View.extend({
 				if (key == 'id'){
 					key = 'Actions'
 				}
+				cell.$el.addClass('uk-text-center')
 				cell.el.textContent = key
 				header.$el.append(cell.el)
 			},this)
@@ -59,11 +59,15 @@ var PokemonList = Backbone.View.extend({
 			body.$el.append(row.render().el)
 		},this)
 		logout.el.textContent = 'Logout'
+		// header.$el.attr('data-uk-sticky','')
 		this.$el.append(caption.el)
 		this.$el.append(head.el)
 		this.$el.append(body.el)
 		head.$el.append(header.el)
 		caption.$el.append(logout.el)
+		var sortable = UIkit.sortable(body.el, {
+			animation: 0
+		});
 		new Tablesort(this.el);
 		return this
 	},

@@ -6,8 +6,8 @@ App.Views.Pokemon = Backbone.View.extend({
 
 		var keys = [
 			'Actions',
-			'#',
 			'Image',
+			'#',
 			'Name',
 			'Nickname',
 			'CP',
@@ -15,8 +15,7 @@ App.Views.Pokemon = Backbone.View.extend({
 			'Attack',
 			'Defense',
 			'Stamina',
-			'Health',
-			'Favorite'
+			'Health'
 		]
 		for (var i in keys){
 			var key = keys[i].toLowerCase()
@@ -24,20 +23,39 @@ App.Views.Pokemon = Backbone.View.extend({
 			var cell = new Backbone.View({
 				tagName: 'td'
 			})
+			cell.$el.addClass('uk-text-center')
+			// cell.$el.addClass('uk-vertical-align')
+
 			this.$el.append(cell.el)
 			if (key == 'actions'){
 				var transferBtn = new Backbone.View({
 					tagName: 'a',
-					className: 'uk-button uk-icon-button uk-icon-trash transfer'
+					className: 'uk-icon-button uk-icon-trash transfer'
 				})
 				var evolveBtn = new Backbone.View({
 					tagName: 'a',
-					className: 'uk-button uk-icon-button uk-icon-level-up evolve'
+					className: 'uk-icon-button uk-icon-level-up evolve'
 				})
+				transferBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
+				transferBtn.$el.attr('title','Transfer')
+				evolveBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
+				evolveBtn.$el.attr('title','Evolve')
 				cell.$el.addClass(key)
 				this.$el.append(cell.el)
 				cell.$el.append(evolveBtn.el)
 				cell.$el.append(transferBtn.el)
+				var fav = this.model.get('favorite')
+				if (fav){
+					cell.$el.append(new Backbone.View({
+						tagName: 'a',
+						className: 'uk-icon-button uk-icon-star'
+					}).el)
+				} else {
+					cell.$el.append(new Backbone.View({
+						tagName: 'a',
+						className: 'uk-icon-button uk-icon-star-o'
+					}).el)
+				}
 				continue
 			}
 			if (key == 'image' && value){
@@ -51,22 +69,11 @@ App.Views.Pokemon = Backbone.View.extend({
 				continue
 			}
 			if (key == 'favorite'){
-				if (value){
-					cell.$el.append(new Backbone.View({
-						tagName: 'i',
-						className: 'uk-icon-star'
-					}).el)
-				} else {
-					cell.$el.append(new Backbone.View({
-						tagName: 'i',
-						className: 'uk-icon-star-o'
-					}).el)
-				}
+
 				continue
 			}
 			if (key == 'iv'){
-				cell.el.innerHTML = "<b>" + value + "</b>"
-				continue
+				cell.$el.addClass('uk-text-bold')
 			}
 			cell.el.textContent = value
 		}
@@ -83,12 +90,14 @@ App.Views.Pokemon = Backbone.View.extend({
 		$.get('/transfer/' + this.model.id,_.bind(function(response){
 			if (response.Status == 1){
 				UIkit.notify({
+					pos: 'bottom-right',
 					status: 'success',
 					message: 'Successfully transfered ' + this.model.get('name') + '.'
 				})
 				this.remove()
 			} else {
 				UIkit.notify({
+					pos: 'bottom-right',
 					status: 'danger',
 					message: 'Failed to transfer ' + this.model.get('name') + '.'
 				})
@@ -105,6 +114,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				// cannot evolve
 				var msg = 'Failed to evolved ' + this.model.get('name') + '.'
 				UIkit.notify({
+					pos: 'bottom-right',
 					status: 'danger',
 					message: msg
 				})
@@ -113,6 +123,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				var msg = 'Failed to evolved ' + this.model.get('name') + '.'
 				msg += ' (Insufficient Candies)'
 				UIkit.notify({
+					pos: 'bottom-right',
 					status: 'danger',
 					message: msg
 				})
@@ -120,6 +131,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				var msg = 'Successfully evolved ' + this.model.get('name') + '.'
 				if (data.ExpAwarded) msg += ' (' + data.ExpAwarded + ' xp)'
 				UIkit.notify({
+					pos: 'bottom-right',
 					status: 'success',
 					message: msg
 				})
