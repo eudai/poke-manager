@@ -29,7 +29,6 @@ module.exports = function(config){
 	var getInventory = function(callback){
 		api.GetInventory(function(error,data){
 			if (error) return callback(error)
-			if (!data) debugger
 			var inventory = data.inventory_delta.inventory_items
 			var pokemon = _.map(_.filter(inventory,function(item){
 				return item.inventory_item_data.pokemon
@@ -48,8 +47,6 @@ module.exports = function(config){
 				var high = parseInt(p.id.high)
 				var low = parseInt(p.id.low)
 				p.id = new Long(low,high).toString()
-				if (!p.id) debugger
-				if (!info && !p.is_egg) debugger
 				return _.extend(p,_.omit(info,'id'))
 			})
 			pokemon = _.reject(pokemon,function(p){

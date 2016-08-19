@@ -2,8 +2,12 @@ App.Views.Pokemon = Backbone.View.extend({
 
 	tagName: 'tr',
 
-	render: function(){
+	initialize: function(){
+		this.model.on('change',this.render,this)
+	},
 
+	render: function(){
+		this.$el.empty()
 		var keys = [
 			'Actions',
 			'Image',
@@ -24,8 +28,6 @@ App.Views.Pokemon = Backbone.View.extend({
 				tagName: 'td'
 			})
 			cell.$el.addClass('uk-text-center')
-			// cell.$el.addClass('uk-vertical-align')
-
 			this.$el.append(cell.el)
 			if (key == 'actions'){
 				var transferBtn = new Backbone.View({
@@ -36,26 +38,36 @@ App.Views.Pokemon = Backbone.View.extend({
 					tagName: 'a',
 					className: 'uk-icon-button uk-icon-level-up evolve'
 				})
+				var nicknameBtn = new Backbone.View({
+					tagName: 'a',
+					className: 'uk-icon-button uk-icon-tag nickname'
+				})
+				var favoriteBtn = new Backbone.View({
+					tagName: 'a',
+					className: 'uk-icon-button favorite'
+				})
+				var upgradeBtn = new Backbone.View({
+					tagName: 'a',
+					className: 'uk-icon-button uk-icon-plus upgrade'
+				})
 				transferBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
 				transferBtn.$el.attr('title','Transfer')
 				evolveBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
 				evolveBtn.$el.attr('title','Evolve')
+				nicknameBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
+				nicknameBtn.$el.attr('title','Nickname')
+				upgradeBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
+				upgradeBtn.$el.attr('title','Upgrade')
+				favoriteBtn.$el.attr('data-uk-tooltip','{delay:500,pos:"bottom",animation:true}')
+				favoriteBtn.$el.attr('title','Favorite')
+				favoriteBtn.$el.addClass(this.model.get('favorite') ? 'uk-icon-star' : 'uk-icon-star-o')
 				cell.$el.addClass(key)
 				this.$el.append(cell.el)
+				cell.$el.append(favoriteBtn.el)
+				// cell.$el.append(nicknameBtn.el)
+				// cell.$el.append(upgradeBtn.el)
 				cell.$el.append(evolveBtn.el)
 				cell.$el.append(transferBtn.el)
-				var fav = this.model.get('favorite')
-				if (fav){
-					cell.$el.append(new Backbone.View({
-						tagName: 'a',
-						className: 'uk-icon-button uk-icon-star'
-					}).el)
-				} else {
-					cell.$el.append(new Backbone.View({
-						tagName: 'a',
-						className: 'uk-icon-button uk-icon-star-o'
-					}).el)
-				}
 				continue
 			}
 			if (key == 'image' && value){
@@ -66,10 +78,6 @@ App.Views.Pokemon = Backbone.View.extend({
 				cell.$el.append(img.el)
 				cell.$el.addClass('uk-width-1-10')
 				img.el.style.width = '50%'
-				continue
-			}
-			if (key == 'favorite'){
-
 				continue
 			}
 			if (key == 'iv'){
@@ -103,13 +111,12 @@ App.Views.Pokemon = Backbone.View.extend({
 				})
 			}
 			this.selected = false
-			this.model.remove()
+			this.model.collection.remove(this.model.id)
 		},this))
 	},
 
 	evolve: function(event){
 		$.get('/evolve/' + this.model.id,_.bind(function(data,status,response){
-			debugger
 			if (data.Result == 4){
 				// cannot evolve
 				var msg = 'Failed to evolved ' + this.model.get('name') + '.'

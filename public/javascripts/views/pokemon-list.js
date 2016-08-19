@@ -27,39 +27,35 @@ var PokemonList = Backbone.View.extend({
 		var header = new Backbone.View({
 			tagName: 'tr'
 		})
-		if (this.collection.models.length > 0){
-			var keys = Object.keys(this.collection.models[0].toJSON())
-			keys = [
-				'Actions',
-				'Image',
-				'#',
-				'Name',
-				'Nickname',
-				'CP',
-				'IV',
-				'Attack',
-				'Defense',
-				'Stamina',
-				'Health'
-			]
-			keys.forEach(function(key){
-				var cell = new Backbone.View({
-					tagName: 'th'
-				})
-				if (key == 'id'){
-					key = 'Actions'
-				}
-				cell.$el.addClass('uk-text-center')
-				cell.el.textContent = key
-				header.$el.append(cell.el)
-			},this)
-		}
+		keys = [
+			'Actions',
+			'Image',
+			'#',
+			'Name',
+			'Nickname',
+			'CP',
+			'IV',
+			'Attack',
+			'Defense',
+			'Stamina',
+			'Health'
+		]
+		keys.forEach(function(key){
+			var cell = new Backbone.View({
+				tagName: 'th'
+			})
+			if (key == 'id'){
+				key = 'Actions'
+			}
+			cell.$el.addClass('uk-text-center')
+			cell.el.textContent = key
+			header.$el.append(cell.el)
+		},this)
 		this.collection.models.forEach(function(model){
 			var row = new App.Views.Pokemon({model: model})
 			body.$el.append(row.render().el)
 		},this)
 		logout.el.textContent = 'Logout'
-		// header.$el.attr('data-uk-sticky','')
 		this.$el.append(caption.el)
 		this.$el.append(head.el)
 		this.$el.append(body.el)
@@ -68,10 +64,11 @@ var PokemonList = Backbone.View.extend({
 		var sortable = UIkit.sortable(body.el, {
 			animation: 0
 		});
-		new Tablesort(this.el);
+		this.sort = new Tablesort(this.el);
 		this.$el.toSearchable({
 			headerTRStyle: 'uk-form'
 		})
+		this.body = body
 		return this
 	},
 

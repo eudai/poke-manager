@@ -9,6 +9,7 @@
 
 3. Python <https://www.python.org/downloads/>
 
+
 ## Setup
 
 git clone https://github.com/eudai/poke-manager.git
@@ -23,31 +24,54 @@ visit <http://localhost:3000>
 
 ## Usage
 
-Login
+[X] Set Location
 
-View Stats and IV
+[X] Choose Provider
 
-Transfer
+[X] Login
 
-Evolve
+[X] List Pokemon Stats
 
-Rename
+[X] Transfer Pokemon
 
-Favorite
+[X] Evolve Pokemon
 
-Sort
+[X] Sort
+
+[X] Search
+
+[ ] Nickname Pokemon
+
+[ ] Mark Pokemon as Favorite
+
+[ ] Upgrade Pokemon
+
+[ ] Display Candy Count
+
+[ ] Crack Lucky Egg
+
+[ ] Display Total Pokemon
+
 
 ## To Do
 
 General style improvements
 
-Improve list responsiveness after pokemon actions
+Improve list responsiveness after evolving pokemon
 
-Add ability to select between google and pokemon-trainer-club login
+Transfer to new api for increased functionality
 
-Add ability to select location upon login
 
-Add search functionality
+## Reference
 
-Add rename functionality
+<https://github.com/Armax/Pokemon-GO-node-api>
 
+https://github.com/gallexme/pokemongo-api
+
+<http://backbonejs.org>
+
+<http://getuikit.com>
+
+<https://github.com/tristen/tablesort>
+
+<https://github.com/Aconex/searchable-table>
