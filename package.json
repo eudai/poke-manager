@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node index",
     "postinstall": "node ./node_modules/bower/bin/bower install"
   },
-  "author": "",
+  "repository": "https://github.com/eudai/poke-manager.git",
+  "description": "manage your pokemon.",
+  "author": "Eudai",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -16,6 +18,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "geocoder": "^0.2.2",
+    "loki": "0.0.0",
     "long": "^3.2.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",

@@ -4,7 +4,6 @@ var _ = require('underscore')
 module.exports = function(config){
 
 	var api = require('pokemon-go-node-api')
-	var loggedIn = false
 	var location = config.location
 	var username = config.username
 	var password = config.password
@@ -14,14 +13,8 @@ module.exports = function(config){
 	var journal
 
 	this.login = function(callback){
-		if (loggedIn) {
-			console.log('Player already logged in.')
-			return callback()
-		}
 		api.init(username,password,location,provider,function(error){
-			if (error) return callback(error)
-			loggedIn = true
-			callback()
+			callback(error)
 		})
 	}
 

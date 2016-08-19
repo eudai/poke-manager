@@ -75,6 +75,7 @@ app.get('/pokemon',function(req,res,next){
 	req.user.getInventory(function(error,data){
 		if (error) {
 			res.status(400)
+			if (!error) error = 'Unknown error.'
 			return res.json({
 				error: error
 			})

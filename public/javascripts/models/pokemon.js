@@ -1,5 +1,6 @@
 App.Models.Pokemon = Backbone.Model.extend({
 
+
 	parse: function(data,options){
 		var total = data.individual_attack + data.individual_defense + data.individual_stamina
 		var iv =  Math.round(total / 45 * 100)
