@@ -69,6 +69,9 @@ var PokemonList = Backbone.View.extend({
 			animation: 0
 		});
 		new Tablesort(this.el);
+		this.$el.toSearchable({
+			headerTRStyle: 'uk-form'
+		})
 		return this
 	},
 

@@ -21,6 +21,7 @@
     "uikit": "^2.26.4",
     "tablesorter": "christianbach/tablesorter",
     "list.js": "^1.2.0",
-    "tablesort": "tristen/tablesort#^4.1.0"
+    "tablesort": "tristen/tablesort#^4.1.0",
+    "searchable-table": "Aconex/searchable-table#^0.0.3"
   }
 }
