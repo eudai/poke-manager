@@ -4,17 +4,28 @@ App.Views.Pokemon = Backbone.View.extend({
 
 	render: function(){
 
-		for (var key in this.model.attributes){
+		var keys = [
+			'Actions',
+			'#',
+			'Image',
+			'Name',
+			'Nickname',
+			'CP',
+			'IV',
+			'Attack',
+			'Defense',
+			'Stamina',
+			'Health',
+			'Favorite'
+		]
+		for (var i in keys){
+			var key = keys[i].toLowerCase()
 			var value = this.model.get(key)
 			var cell = new Backbone.View({
-				tagName: 'td',
-				// className: 'uk-text-center'
+				tagName: 'td'
 			})
 			this.$el.append(cell.el)
-			if (key == 'id'){
-				var checkbox = new Backbone.View({
-					tagName: 'input'
-				})
+			if (key == 'actions'){
 				var transferBtn = new Backbone.View({
 					tagName: 'a',
 					className: 'uk-button uk-icon-button uk-icon-trash transfer'
@@ -23,15 +34,13 @@ App.Views.Pokemon = Backbone.View.extend({
 					tagName: 'a',
 					className: 'uk-button uk-icon-button uk-icon-level-up evolve'
 				})
-				checkbox.el.type = 'checkbox'
 				cell.$el.addClass(key)
 				this.$el.append(cell.el)
-				cell.$el.append(checkbox.el)
 				cell.$el.append(evolveBtn.el)
 				cell.$el.append(transferBtn.el)
 				continue
 			}
-			if (key == 'img' && value){
+			if (key == 'image' && value){
 				var img = new Backbone.View({
 					tagName: 'img'
 				})
@@ -53,6 +62,10 @@ App.Views.Pokemon = Backbone.View.extend({
 						className: 'uk-icon-star-o'
 					}).el)
 				}
+				continue
+			}
+			if (key == 'iv'){
+				cell.el.innerHTML = "<b>" + value + "</b>"
 				continue
 			}
 			cell.el.textContent = value

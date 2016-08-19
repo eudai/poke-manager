@@ -7,15 +7,15 @@ App.Models.Pokemon = Backbone.Model.extend({
 		return {
 			id: data.id,
 			'#': data.num,
-			img: data.img,
+			image: data.img,
 			name: data.name,
 			nickname: data.nickname,
 			cp: data.cp,
 			health: data.stamina_max,
 			iv: iv,
-			attack: data.individual_attack,
-			defence: data.individual_defense,
-			stamina: data.individual_stamina,
+			attack: data.individual_attack || 0,
+			defense: data.individual_defense || 0,
+			stamina: data.individual_stamina || 0,
 			favorite: data.favorite
 		}
 	}
