@@ -3,24 +3,24 @@
 
 ## Prerequisites
 
-1. Node.js <https://nodejs.org/en/>
+  - Node.js (<https://nodejs.org/en/>)
 
-2. Git <https://git-scm.com/>
+  - Git (<https://git-scm.com/>)
 
-3. Python <https://www.python.org/downloads/>
+  - Python (<https://www.python.org/downloads/>)
 
 
 ## Setup
 
-git clone https://github.com/eudai/poke-manager.git
+  `git clone https://github.com/eudai/poke-manager.git`
 
-cd poke-manager
+  `cd poke-manager`
 
-npm install
+  `npm install`
 
-npm start
+  `npm start`
 
-visit <http://localhost:3000>
+  In your browser, navigate to:  <http://localhost:3000>
 
 ## Usage
 
@@ -55,18 +55,18 @@ visit <http://localhost:3000>
 
 ## To Do
 
-General style improvements
+  General style improvements
 
-Improve list responsiveness after evolving pokemon
+  Improve list responsiveness after evolving pokemon
 
-Transfer to new api for increased functionality
+  Transfer to new api for increased functionality
 
 
 ## Reference
 
 <https://github.com/Armax/Pokemon-GO-node-api>
 
-https://github.com/gallexme/pokemongo-api
+<https://github.com/gallexme/pokemongo-api>
 
 <http://backbonejs.org>
 
