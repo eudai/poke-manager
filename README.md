@@ -12,45 +12,45 @@
 
 ## Setup
 
-  `git clone https://github.com/eudai/poke-manager.git`
+  1. `git clone https://github.com/eudai/poke-manager.git`
 
-  `cd poke-manager`
+  2. `cd poke-manager`
 
-  `npm install`
+  3. `npm install`
 
-  `npm start`
+  4. `npm start`
 
-  In your browser, navigate to:  <http://localhost:3000>
+  5. In your browser, navigate to <http://localhost:3000>
 
 ## Usage
 
-[X] Set Location
-
-[X] Choose Provider
-
-[X] Login
-
-[X] List Pokemon Stats
-
-[X] Transfer Pokemon
-
-[X] Evolve Pokemon
-
-[X] Sort
-
-[X] Search
-
-[ ] Nickname Pokemon
-
-[ ] Mark Pokemon as Favorite
-
-[ ] Upgrade Pokemon
-
-[ ] Display Candy Count
-
-[ ] Crack Lucky Egg
-
-[ ] Display Total Pokemon
+  [X] Set Location
+  
+  [X] Choose Provider
+  
+  [X] Login
+  
+  [X] List Pokemon Stats
+  
+  [X] Transfer Pokemon
+  
+  [X] Evolve Pokemon
+  
+  [X] Sort
+  
+  [X] Search
+  
+  [ ] Nickname Pokemon
+  
+  [ ] Mark Pokemon as Favorite
+  
+  [ ] Upgrade Pokemon
+  
+  [ ] Display Candy Count
+  
+  [ ] Crack Lucky Egg
+  
+  [ ] Display Total Pokemon
 
 
 ## To Do
@@ -64,14 +64,14 @@
 
 ## Reference
 
-<https://github.com/Armax/Pokemon-GO-node-api>
-
-<https://github.com/gallexme/pokemongo-api>
-
-<http://backbonejs.org>
-
-<http://getuikit.com>
-
-<https://github.com/tristen/tablesort>
-
-<https://github.com/Aconex/searchable-table>
+  <https://github.com/Armax/Pokemon-GO-node-api>
+  
+  <https://github.com/gallexme/pokemongo-api>
+  
+  <http://backbonejs.org>
+  
+  <http://getuikit.com>
+  
+  <https://github.com/tristen/tablesort>
+  
+  <https://github.com/Aconex/searchable-table>
