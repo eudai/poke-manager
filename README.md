@@ -3,24 +3,24 @@
 
 ## Prerequisites
 
-1. Node.js <https://nodejs.org/en/>
+- Node.js (<https://nodejs.org/en/>)
 
-2. Git <https://git-scm.com/>
+- Git (<https://git-scm.com/>)
 
-3. Python <https://www.python.org/downloads/>
+- Python (<https://www.python.org/downloads/>)
 
 
 ## Setup
 
-git clone https://github.com/eudai/poke-manager.git
+1. `git clone https://github.com/eudai/poke-manager.git`
 
-cd poke-manager
+2. `cd poke-manager`
 
-npm install
+3. `npm install`
 
-npm start
+4. `npm start`
 
-visit <http://localhost:3000>
+5. In your browser, navigate to <http://localhost:3000>
 
 ## Usage
 
@@ -70,7 +70,7 @@ Transfer to new api for increased functionality
 
 <https://github.com/Armax/Pokemon-GO-node-api>
 
-https://github.com/gallexme/pokemongo-api
+<https://github.com/gallexme/pokemongo-api>
 
 <http://backbonejs.org>
 
