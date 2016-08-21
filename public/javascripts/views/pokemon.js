@@ -139,7 +139,8 @@ App.Views.Pokemon = Backbone.View.extend({
 					message: msg
 				})
 			} else {
-				var msg = 'Successfully evolved ' + this.model.get('name') + '.'
+				var name = this.model.get('name')
+				var msg = 'Successfully evolved ' + name + '.'
 				if (data.ExpAwarded) msg += ' (' + data.ExpAwarded + ' xp)'
 				UIkit.notify({
 					pos: 'bottom-right',
@@ -148,6 +149,13 @@ App.Views.Pokemon = Backbone.View.extend({
 				})
 				this.remove()
 				this.model.collection.fetch()
+				setTimeout(function(){
+					UIkit.notify({
+						pos: 'bottom-right',
+						status: 'success',
+						message: 'Evolution sequence complete: ' + name
+					})
+				})
 			}
 
 		},this))
