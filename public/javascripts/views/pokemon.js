@@ -155,7 +155,7 @@ App.Views.Pokemon = Backbone.View.extend({
 						status: 'success',
 						message: 'Evolution sequence complete: ' + name
 					})
-				})
+				},20000)
 			}
 
 		},this))
