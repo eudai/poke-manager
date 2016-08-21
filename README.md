@@ -44,21 +44,17 @@ visit <http://localhost:3000>
 
 [X] Available Evolutions
 
+[X] Display Candy Count
+
 [ ] Nickname Pokemon
 
 [ ] Mark Pokemon as Favorite
 
 [ ] Upgrade Pokemon
 
-[ ] Display Candy Count
-
 [ ] Crack Lucky Egg
 
 [ ] Display Total Pokemon
-
-[ ] Priority Sorting
-
-[ ] Persitent Sorting
 
 
 ## To Do

@@ -4,8 +4,9 @@ var PokemonList = Backbone.View.extend({
 	className: 'uk-table uk-table-condensed uk-table-hover tablesorter',
 
 	initialize: function(){
-		this.collection.on('update',this.render,this)
+		this.collection.on('update',this.update,this)
 		Backbone.Events.on('logged-out',this.remove,this)
+		this.priorities = []
 	},
 
 	render: function(){
@@ -67,11 +68,32 @@ var PokemonList = Backbone.View.extend({
 		var sortable = UIkit.sortable(body.el, {
 			animation: 0
 		});
-		this.sort = new Tablesort(this.el);
+		// this.$el.toSearchable({
+		// 	headerTRStyle: 'uk-form'
+		// })
+		this.body = body
+		return this
+	},
+
+	update: function(){
+		var models = _.reject(this.collection.models,function(m){
+			return m._changing
+		})
+		models.forEach(function(model){
+			var row = new App.Views.Pokemon({model: model})
+			this.body.$el.append(row.render().el)
+		},this)
+		if (this.sorted){
+			this.sort.refresh()
+		} else {
+			this.sort = new Tablesort(this.el)
+			this.sorted == true
+		}
+		var parent = this.$el.find('.searchable-general-search').parent('tr')
+		parent.remove()
 		this.$el.toSearchable({
 			headerTRStyle: 'uk-form'
 		})
-		this.body = body
 		return this
 	},
 

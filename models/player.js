@@ -1,6 +1,5 @@
 var Long = require('long')
 var _ = require('underscore')
-var fs = require('fs')
 var family = require('../data/family.json')
 var evolution = require('../data/evolution.json')
 
@@ -33,7 +32,6 @@ module.exports = function(config){
 		api.GetInventory(function(error,data){
 			if (error) return callback(error)
 			var inventory = data.inventory_delta.inventory_items
-			fs.writeFile('inventory.json',JSON.stringify(inventory))
 			var pokemon = _.map(_.filter(inventory,function(item){
 				return item.inventory_item_data.pokemon
 			}),function(item){

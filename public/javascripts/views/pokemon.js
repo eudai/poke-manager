@@ -115,6 +115,7 @@ App.Views.Pokemon = Backbone.View.extend({
 			}
 			this.selected = false
 			// this.model.collection.remove(this.model.id)
+			this.model.collection.fetch()
 		},this))
 	},
 
