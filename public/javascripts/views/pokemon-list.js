@@ -28,6 +28,9 @@ var PokemonList = Backbone.View.extend({
 		var header = new Backbone.View({
 			tagName: 'tr'
 		})
+		var total = new Backbone.View({
+			tagName: 'span'
+		})
 		keys = [
 			'Actions',
 			'Image',
@@ -64,7 +67,9 @@ var PokemonList = Backbone.View.extend({
 		this.$el.append(head.el)
 		this.$el.append(body.el)
 		head.$el.append(header.el)
+		caption.$el.append(total.el)
 		caption.$el.append(logout.el)
+
 		var sortable = UIkit.sortable(body.el, {
 			animation: 0
 		});
@@ -72,6 +77,7 @@ var PokemonList = Backbone.View.extend({
 		// 	headerTRStyle: 'uk-form'
 		// })
 		this.body = body
+		this.total = total
 		return this
 	},
 
@@ -94,6 +100,18 @@ var PokemonList = Backbone.View.extend({
 		this.$el.toSearchable({
 			headerTRStyle: 'uk-form'
 		})
+		var total = models.length
+		var evolutions = 0
+		var counted = []
+		for (var i in models){
+			var model = models[i]
+			var number = model.get('#')
+			if (counted.indexOf(number) > -1) continue
+			counted.push(number)
+			evolutions += model.get('evolutions')
+		}
+		console.log(evolutions)
+		this.total.el.textContent = 'Total Pokemon: ' + total
 		return this
 	},
 

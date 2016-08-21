@@ -66,7 +66,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				favoriteBtn.$el.addClass(this.model.get('favorite') ? 'uk-icon-star' : 'uk-icon-star-o')
 				cell.$el.addClass(key)
 				this.$el.append(cell.el)
-				cell.$el.append(favoriteBtn.el)
+				// cell.$el.append(favoriteBtn.el)
 				// cell.$el.append(nicknameBtn.el)
 				// cell.$el.append(upgradeBtn.el)
 				cell.$el.append(evolveBtn.el)
@@ -114,7 +114,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				})
 			}
 			this.selected = false
-			// this.model.collection.remove(this.model.id)
+			this.model.collection.remove(this.model.id)
 			this.model.collection.fetch()
 		},this))
 	},

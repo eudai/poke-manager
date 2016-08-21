@@ -44,7 +44,9 @@
 
 [X] Available Evolutions
 
-[X] Display Candy Count
+[X] Candy Count
+
+[X] Total Pokemon
 
 [ ] Nickname Pokemon
 
@@ -53,18 +55,6 @@
 [ ] Upgrade Pokemon
 
 [ ] Crack Lucky Egg
-
-[ ] Display Total Pokemon
-
-
-## To Do
-
-General style improvements
-
-Improve list responsiveness after evolving pokemon
-
-Transfer to new api for increased functionality
-
 
 ## Reference
 
