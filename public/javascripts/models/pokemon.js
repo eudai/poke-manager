@@ -16,7 +16,10 @@ App.Models.Pokemon = Backbone.Model.extend({
 			attack: data.individual_attack || 0,
 			defense: data.individual_defense || 0,
 			stamina: data.individual_stamina || 0,
-			favorite: data.favorite
+			favorite: data.favorite,
+			candy: data.candy,
+			evolutions: data.evolutions,
+			count: data.count
 		}
 	}
 

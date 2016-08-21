@@ -30,7 +30,7 @@ visit <http://localhost:3000>
 
 [X] Login
 
-[X] List Pokemon Stats
+[X] Accurate IVs
 
 [X] Transfer Pokemon
 
@@ -39,6 +39,10 @@ visit <http://localhost:3000>
 [X] Sort
 
 [X] Search
+
+[X] Candies
+
+[X] Available Evolutions
 
 [ ] Nickname Pokemon
 
@@ -51,6 +55,10 @@ visit <http://localhost:3000>
 [ ] Crack Lucky Egg
 
 [ ] Display Total Pokemon
+
+[ ] Priority Sorting
+
+[ ] Persitent Sorting
 
 
 ## To Do

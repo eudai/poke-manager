@@ -1,14 +1,13 @@
 {
   "name": "pokebot",
   "version": "1.0.0",
-  "description": "",
+  "description": "manage your pokemon.",
   "main": "index.js",
   "scripts": {
-	"start": "node index",
+    "start": "node index",
     "postinstall": "node ./node_modules/bower/bin/bower install"
   },
   "repository": "https://github.com/eudai/poke-manager.git",
-  "description": "manage your pokemon.",
   "author": "Eudai",
   "license": "ISC",
   "dependencies": {
@@ -23,7 +22,11 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pokemon-go-node-api": "^1.4.0",
+    "pokemongo-api": "^1.8.2",
     "serve-favicon": "^2.3.0",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4"
   }
 }

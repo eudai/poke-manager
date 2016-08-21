@@ -19,7 +19,10 @@ App.Views.Pokemon = Backbone.View.extend({
 			'Attack',
 			'Defense',
 			'Stamina',
-			'Health'
+			'Health',
+			'Candy',
+			'Evolutions',
+			'Count'
 		]
 		for (var i in keys){
 			var key = keys[i].toLowerCase()
@@ -111,7 +114,7 @@ App.Views.Pokemon = Backbone.View.extend({
 				})
 			}
 			this.selected = false
-			this.model.collection.remove(this.model.id)
+			// this.model.collection.remove(this.model.id)
 		},this))
 	},
 
