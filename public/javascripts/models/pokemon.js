@@ -20,7 +20,8 @@ App.Models.Pokemon = Backbone.Model.extend({
 			candy: data.candy,
 			evolutions: data.evolutions,
 			count: data.count,
-			time: data.creation_time
+			time: data.creation_time,
+			multiplier: data.cp_multiplier
 		}
 	}
 

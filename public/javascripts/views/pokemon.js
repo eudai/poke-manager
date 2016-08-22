@@ -89,6 +89,9 @@ App.Views.Pokemon = Backbone.View.extend({
 			if ( key == 'time'){
 				value = moment(value).format()
 			}
+			if (key == 'multiplier'){
+				value = Math.round(value * 100)
+			}
 			cell.el.textContent = value
 		}
 		this.model.rendered = true

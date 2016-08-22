@@ -44,8 +44,7 @@ var PokemonList = Backbone.View.extend({
 			'Stamina',
 			'Health',
 			'Candy',
-			'Evolutions',
-			'Count'
+			'Evolutions'
 		]
 		keys.forEach(function(key){
 			var cell = new Backbone.View({

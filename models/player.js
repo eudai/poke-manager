@@ -39,7 +39,6 @@ module.exports = function(config){
 			}),function(item){
 				return item.inventory_item_data.pokemon
 			})
-			fs.writeFile('pokemon.json',JSON.stringify(pokemon))
 			var candies = _.map(_.filter(inventory,function(item){
 				return item.inventory_item_data.pokemon_family
 			}),function(item){
