@@ -81,9 +81,9 @@ var PokemonList = Backbone.View.extend({
 		return this
 	},
 
-	update: function(){
+	update: function(collection,request){
 		var models = _.reject(this.collection.models,function(m){
-			return m._changing
+			return m.rendered
 		})
 		models.forEach(function(model){
 			var row = new App.Views.Pokemon({model: model})

@@ -91,6 +91,7 @@ App.Views.Pokemon = Backbone.View.extend({
 			}
 			cell.el.textContent = value
 		}
+		this.model.rendered = true
 		return this
 	},
 
