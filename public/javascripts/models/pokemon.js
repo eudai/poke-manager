@@ -19,7 +19,8 @@ App.Models.Pokemon = Backbone.Model.extend({
 			favorite: data.favorite,
 			candy: data.candy,
 			evolutions: data.evolutions,
-			count: data.count
+			count: data.count,
+			time: data.creation_time
 		}
 	}
 

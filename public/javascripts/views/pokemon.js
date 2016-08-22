@@ -86,6 +86,9 @@ App.Views.Pokemon = Backbone.View.extend({
 			if (key == 'iv'){
 				cell.$el.addClass('uk-text-bold')
 			}
+			if ( key == 'time'){
+				value = moment(value).format()
+			}
 			cell.el.textContent = value
 		}
 		return this

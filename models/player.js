@@ -2,6 +2,8 @@ var Long = require('long')
 var _ = require('underscore')
 var family = require('../data/family.json')
 var evolution = require('../data/evolution.json')
+var fs = require('fs')
+var moment = require('moment')
 
 module.exports = function(config){
 
@@ -37,6 +39,7 @@ module.exports = function(config){
 			}),function(item){
 				return item.inventory_item_data.pokemon
 			})
+			fs.writeFile('pokemon.json',JSON.stringify(pokemon))
 			var candies = _.map(_.filter(inventory,function(item){
 				return item.inventory_item_data.pokemon_family
 			}),function(item){
@@ -61,6 +64,10 @@ module.exports = function(config){
 				var high = parseInt(p.id.high)
 				var low = parseInt(p.id.low)
 				p.id = new Long(low,high).toString()
+				var createdLow = p.creation_time_ms.low
+				var createdHigh = p.creation_time_ms.high
+				var createdAt = new Long(createdLow,createdHigh).toString()
+				p.creation_time = moment(parseInt(createdAt))
 				p.candy = parseInt(candy.candy || 0)
 				p.evolutions = Math.floor(p.candy / evolution[p.pokemon_id])
 				p.count = _.where(pokemon,{pokemon_id: p.pokemon_id}).length
