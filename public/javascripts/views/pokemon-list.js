@@ -44,7 +44,8 @@ var PokemonList = Backbone.View.extend({
 			'Stamina',
 			'Health',
 			'Candy',
-			'Evolutions'
+			'Evolutions',
+			'Count'
 		]
 		keys.forEach(function(key){
 			var cell = new Backbone.View({
@@ -99,7 +100,7 @@ var PokemonList = Backbone.View.extend({
 		this.$el.toSearchable({
 			headerTRStyle: 'uk-form'
 		})
-		var total = models.length
+		var total = collection.models.length
 		var evolutions = 0
 		var counted = []
 		for (var i in models){
