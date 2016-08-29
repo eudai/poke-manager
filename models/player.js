@@ -1,37 +1,26 @@
 var Long = require('long')
 var _ = require('underscore')
+var moment = require('moment')
 var family = require('../data/family.json')
 var evolution = require('../data/evolution.json')
-var fs = require('fs')
-var moment = require('moment')
+var Api = require('../library/api')
 
 module.exports = function(config){
 
-	var api = require('pokemon-go-node-api')
+	var api = new Api
 	var location = config.location
 	var username = config.username
 	var password = config.password
 	var provider = config.provider
-	var inventory
-	var profile
-	var journal
 
 	this.login = function(callback){
-		api.init(username,password,location,provider,function(error){
+		api.login(username,password,location,provider,function(error){
 			callback(error)
 		})
 	}
 
-	var getProfile = function(callback){
-		api.GetProfile(callback)
-	}
-
-	var getJournal = function(callback){
-		api.GetJournal(callback)
-	}
-
-	var getInventory = function(callback){
-		api.GetInventory(function(error,data){
+	this.getInventory = function(callback){
+		api.getInventory(function(error,data){
 			if (error) return callback(error)
 			var inventory = data.inventory_delta.inventory_items
 			var pokemon = _.map(_.filter(inventory,function(item){
@@ -53,7 +42,7 @@ module.exports = function(config){
 				return p.is_egg
 			})
 			pokemon = _.map(pokemon,function(p){
-				var info = _.find(api.pokemonlist,function(i){
+				var info = _.find(api.pokedex,function(i){
 					return i.id == p.pokemon_id
 				})
 				var candy = _.find(candies,function(c){
@@ -79,9 +68,9 @@ module.exports = function(config){
 		})
 	}
 
+	this.transferPokemon = api.transferPokemon
+	this.evolvePokemon = api.evolvePokemon
 	this.username = username
 	this.provider = provider
 	this.location = location
-	this.getInventory = getInventory
-
 }

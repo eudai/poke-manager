@@ -110,7 +110,6 @@ var PokemonList = Backbone.View.extend({
 			counted.push(number)
 			evolutions += model.get('evolutions')
 		}
-		console.log(evolutions)
 		this.total.el.textContent = 'Total Pokemon: ' + total
 		return this
 	},

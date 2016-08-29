@@ -1,18 +1,15 @@
-var Player = require('./models/player')
-var utilities = require('./models/utilities')
+var _ = require('underscore')
 var express = require('express')
-var api = require('pokemon-go-node-api')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var Long = require('long')
 var passport = require('passport')
 var session = require('express-session')
 var favicon = require('serve-favicon')
-var _ = require('underscore')
-var LocalStrategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy
+var Player = require('./models/player')
 var app = express()
 var players = {}
-
 
 passport.use(new LocalStrategy({
 	passReqToCallback: true,
@@ -21,10 +18,7 @@ passport.use(new LocalStrategy({
 		username: username,
 		password: password,
 		provider: req.body.provider,
-		location: {
-			type: 'name',
-			name: req.body.location
-		}
+		location: req.body.location
 	})
 	players[player.username] = player
 	player.login(function(error){
@@ -52,7 +46,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static('public'))
-app.use(favicon(__dirname + '/public/images/pokemon-icon.png'));
+app.use(favicon('./public/images/pokemon-icon.png'))
 
 app.post('/login',passport.authenticate('local'),function(req,res){
 	res.json(req.user)
@@ -84,13 +78,13 @@ app.get('/pokemon',function(req,res,next){
 })
 
 app.get('/transfer/:id',function(req,res){
-	api.TransferPokemon(req.params.id,function(error,data){
+	req.user.transferPokemon(req.params.id,function(error,data){
 		res.json(error || data)
 	})
 })
 
 app.get('/evolve/:id',function(req,res){
-	api.EvolvePokemon(req.params.id,function(error,data){
+	req.user.evolvePokemon(req.params.id,function(error,data){
 		res.json(error || data)
 	})
 })
@@ -100,5 +94,5 @@ app.listen(process.env.PORT || 3000, function () {
 })
 
 process.on('uncaughtException', function(error){
-	if (error) console.error(error)
+	if (error) console.trace(error)
 })

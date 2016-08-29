@@ -17,16 +17,14 @@
     "express": "^4.14.0",
     "express-session": "^1.14.0",
     "geocoder": "^0.2.2",
-    "loki": "0.0.0",
+    "gpsoauthnode": "0.0.5",
     "long": "^3.2.0",
     "moment": "^2.14.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "pokemon-go-node-api": "^1.4.0",
+    "protobufjs": "^5.0.1",
+    "request": "^2.74.0",
     "serve-favicon": "^2.3.0",
     "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.11.4"
   }
 }
