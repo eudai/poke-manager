@@ -463,7 +463,7 @@
                         },
                         {
                             "rule": "optional",
-                            "type": "int64",
+                            "type": "int32",
                             "name": "unknown72",
                             "id": 2
                         },
