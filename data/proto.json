@@ -1,0 +1,4463 @@
+{
+    "package": null,
+    "messages": [
+        {
+            "name": "RequestEnvelop",
+            "fields": [
+                {
+                    "rule": "required",
+                    "type": "int32",
+                    "name": "unknown1",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int64",
+                    "name": "rpc_id",
+                    "id": 3
+                },
+                {
+                    "rule": "repeated",
+                    "type": "Requests",
+                    "name": "requests",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "type": "Unknown6",
+                    "name": "unknown6",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "double",
+                    "name": "latitude",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "type": "double",
+                    "name": "longitude",
+                    "id": 8
+                },
+                {
+                    "rule": "optional",
+                    "type": "double",
+                    "name": "altitude",
+                    "id": 9
+                },
+                {
+                    "rule": "optional",
+                    "type": "AuthInfo",
+                    "name": "auth",
+                    "id": 10
+                },
+                {
+                    "rule": "optional",
+                    "type": "int64",
+                    "name": "unknown12",
+                    "id": 12
+                }
+            ],
+            "messages": [
+                {
+                    "name": "Requests",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "type",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "message",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown3",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "unknown4",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown6",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "unknown1",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "Unknown2",
+                            "name": "unknown2",
+                            "id": 2
+                        }
+                    ],
+                    "messages": [
+                        {
+                            "name": "Unknown2",
+                            "fields": [
+                                {
+                                    "rule": "required",
+                                    "type": "bytes",
+                                    "name": "unknown1",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "AuthInfo",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "provider",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "JWT",
+                            "name": "token",
+                            "id": 2
+                        }
+                    ],
+                    "messages": [
+                        {
+                            "name": "JWT",
+                            "fields": [
+                                {
+                                    "rule": "required",
+                                    "type": "string",
+                                    "name": "contents",
+                                    "id": 1
+                                },
+                                {
+                                    "rule": "required",
+                                    "type": "int32",
+                                    "name": "unknown13",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "MessageQuad",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "uint64",
+                            "name": "f1",
+                            "id": 1,
+                            "options": {
+                                "packed": true
+                            }
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "int64",
+                            "name": "f2",
+                            "id": 2,
+                            "options": {
+                                "packed": true
+                            }
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "lat",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "long",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "CatchPokemonMessage",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "fixed64",
+                            "name": "encounter_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "pokeball",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "normalized_reticle_size",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "spawnpoint_id",
+                            "id": 4
+                        },
+                        {
+                            "rule": "required",
+                            "type": "bool",
+                            "name": "hit_pokemon",
+                            "id": 5
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "spin_modifier",
+                            "id": 6
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "normalized_hit_position",
+                            "id": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "EvolvePokemonMessage",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "fixed64",
+                            "name": "PokemonId",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "TransferPokemonMessage",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "fixed64",
+                            "name": "PokemonId",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "EncounterMessage",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "fixed64",
+                            "name": "encounter_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "spawnpoint_id",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "player_latitude",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "player_longitude",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "FortSearchMessage",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "fort_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "player_latitude",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "player_longitude",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "fort_latitude",
+                            "id": 4
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "fort_longitude",
+                            "id": 5
+                        }
+                    ]
+                },
+                {
+                    "name": "FortDetailsRequest",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "fort_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "fort_latitude",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "fort_longitude",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "RecycleInventoryItemMessage",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "item_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "count",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "ReleasePokemonMessage",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "fixed64",
+                            "name": "pokemon_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "fixed64",
+                            "name": "pokemon_ids",
+                            "id": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ResponseEnvelop",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "type": "int32",
+                    "name": "unknown1",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "type": "int64",
+                    "name": "unknown2",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "type": "string",
+                    "name": "api_url",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "type": "Unknown6",
+                    "name": "unknown6",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "type": "Unknown7",
+                    "name": "unknown7",
+                    "id": 7
+                },
+                {
+                    "rule": "repeated",
+                    "type": "bytes",
+                    "name": "payload",
+                    "id": 100
+                }
+            ],
+            "messages": [
+                {
+                    "name": "Unknown6",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "unknown1",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "Unknown2",
+                            "name": "unknown2",
+                            "id": 2
+                        }
+                    ],
+                    "messages": [
+                        {
+                            "name": "Unknown2",
+                            "fields": [
+                                {
+                                    "rule": "required",
+                                    "type": "bytes",
+                                    "name": "unknown1",
+                                    "id": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Unknown7",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "unknown71",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "unknown72",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "unknown73",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "HeartbeatPayload",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "ClientMapCell",
+                            "name": "cells",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "ClientMapCell",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "uint64",
+                            "name": "S2CellId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "AsOfTimeMs",
+                            "id": 2
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "PokemonFortProto",
+                            "name": "Fort",
+                            "id": 3
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "ClientSpawnPointProto",
+                            "name": "SpawnPoint",
+                            "id": 4
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "WildPokemonProto",
+                            "name": "WildPokemon",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "IsTruncatedList",
+                            "id": 7
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "PokemonSummaryFortProto",
+                            "name": "FortSummary",
+                            "id": 8
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "ClientSpawnPointProto",
+                            "name": "DecimatedSpawnPoint",
+                            "id": 9
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "MapPokemonProto",
+                            "name": "MapPokemon",
+                            "id": 10
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "NearbyPokemonProto",
+                            "name": "NearbyPokemon",
+                            "id": 11
+                        }
+                    ]
+                },
+                {
+                    "name": "MapPokemonProto",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "SpawnPointId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "fixed64",
+                            "name": "EncounterId",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "PokedexTypeId",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "ExpirationTimeMs",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "Latitude",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "Longitude",
+                            "id": 6
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonFortProto",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "FortId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "LastModifiedMs",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Latitude",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Longitude",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "Team",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "GuardPokemonId",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "GuardPokemonLevel",
+                            "id": 7
+                        },
+                        {
+                            "rule": "required",
+                            "type": "bool",
+                            "name": "Enabled",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "FortType",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "GymPoints",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "IsInBattle",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "ActiveFortModifier",
+                            "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "FortLureInfoProto",
+                            "name": "LureInfo",
+                            "id": 13
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "CooldownCompleteMs",
+                            "id": 14
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "Sponsor",
+                            "id": 15
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "RenderingType",
+                            "id": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "FortLureInfoProto",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "FortId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "unknown2",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int32",
+                            "name": "ActivePokemonId",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "LureExpiresTimestampMs",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "DeployerPlayerCodename",
+                            "id": 5
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonSummaryFortProto",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "string",
+                            "name": "FortSummaryId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "LastModifiedMs",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Latitude",
+                            "id": 3
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Longitude",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "ClientSpawnPointProto",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Latitude",
+                            "id": 2
+                        },
+                        {
+                            "rule": "required",
+                            "type": "double",
+                            "name": "Longitude",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "WildPokemonProto",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "fixed64",
+                            "name": "EncounterId",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "LastModifiedMs",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "Latitude",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "Longitude",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "SpawnPointId",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Pokemon",
+                            "name": "pokemon",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "TimeTillHiddenMs",
+                            "id": 11
+                        }
+                    ],
+                    "messages": [
+                        {
+                            "name": "Pokemon",
+                            "fields": [
+                                {
+                                    "rule": "optional",
+                                    "type": "uint64",
+                                    "name": "Id",
+                                    "id": 1
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "PokemonId",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "NearbyPokemonProto",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "PokedexNumber",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "DistanceMeters",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "fixed64",
+                            "name": "EncounterId",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "ProfilePayload",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "int32",
+                            "name": "unknown1",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Profile",
+                            "name": "profile",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Profile",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "int64",
+                            "name": "creation_time",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "username",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "team",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "tutorial",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "AvatarDetails",
+                            "name": "avatar",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "poke_storage",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "item_storage",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "DailyBonus",
+                            "name": "daily_bonus",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "unknown12",
+                            "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "unknown13",
+                            "id": 13
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "Currency",
+                            "name": "currency",
+                            "id": 14
+                        }
+                    ],
+                    "messages": [
+                        {
+                            "name": "AvatarDetails",
+                            "fields": [
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "skin",
+                                    "id": 2
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "hair",
+                                    "id": 3
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "tshirt",
+                                    "id": 4
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "trousers",
+                                    "id": 5
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "cap",
+                                    "id": 6
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "boots",
+                                    "id": 7
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "gender",
+                                    "id": 8
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "eyes",
+                                    "id": 9
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "backpack",
+                                    "id": 10
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DailyBonus",
+                            "fields": [
+                                {
+                                    "rule": "optional",
+                                    "type": "int64",
+                                    "name": "NextCollectTimestampMs",
+                                    "id": 1
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int64",
+                                    "name": "NextDefenderBonusCollectTimestampMs",
+                                    "id": 2
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Currency",
+                            "fields": [
+                                {
+                                    "rule": "required",
+                                    "type": "string",
+                                    "name": "type",
+                                    "id": 1
+                                },
+                                {
+                                    "rule": "optional",
+                                    "type": "int32",
+                                    "name": "amount",
+                                    "id": 2
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "GetInventoryResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "success",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "InventoryDelta",
+                            "name": "inventory_delta",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryDelta",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "original_timestamp_ms",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "new_timestamp_ms",
+                            "id": 2
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "InventoryItem",
+                            "name": "inventory_items",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryItem",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "modified_timestamp_ms",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "deleted_item_key",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "InventoryItemData",
+                            "name": "inventory_item_data",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryItemData",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "PokemonData",
+                            "name": "pokemon",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Item",
+                            "name": "item",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokedexEntry",
+                            "name": "pokedex_entry",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PlayerStats",
+                            "name": "player_stats",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PlayerCurrency",
+                            "name": "player_currency",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PlayerCamera",
+                            "name": "player_camera",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "InventoryUpgrades",
+                            "name": "inventory_upgrades",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "AppliedItems",
+                            "name": "applied_items",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "EggIncubators",
+                            "name": "egg_incubators",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonFamily",
+                            "name": "pokemon_family",
+                            "id": 10
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonData",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "fixed64",
+                            "name": "id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonId",
+                            "name": "pokemon_id",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "cp",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "stamina",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "stamina_max",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonMove",
+                            "name": "move_1",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonMove",
+                            "name": "move_2",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "deployed_fort_id",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "owner_name",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "is_egg",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "egg_km_walked_target",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "egg_km_walked_start",
+                            "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "origin",
+                            "id": 14
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "height_m",
+                            "id": 15
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "weight_kg",
+                            "id": 16
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_attack",
+                            "id": 17
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_defense",
+                            "id": 18
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_stamina",
+                            "id": 19
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "cp_multiplier",
+                            "id": 20
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "ItemId",
+                            "name": "pokeball",
+                            "id": 21
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "uint64",
+                            "name": "captured_cell_id",
+                            "id": 22
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battles_attacked",
+                            "id": 23
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battles_defended",
+                            "id": 24
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "egg_incubator_id",
+                            "id": 25
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "uint64",
+                            "name": "creation_time_ms",
+                            "id": 26
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "num_upgrades",
+                            "id": 27
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "additional_cp_multiplier",
+                            "id": 28
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "favorite",
+                            "id": 29
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "nickname",
+                            "id": 30
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "from_fort",
+                            "id": 31
+                        }
+                    ]
+                },
+                {
+                    "name": "Pokemon",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonId",
+                            "name": "pokemon_type",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "cp",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "stamina",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "stamina_max",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonMove",
+                            "name": "move_1",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonMove",
+                            "name": "move_2",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "deployed_fort_id",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "owner_name",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "is_egg",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "egg_km_walked_target",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "egg_km_walked_start",
+                            "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "origin",
+                            "id": 14
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "height_m",
+                            "id": 15
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "weight_kg",
+                            "id": 16
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_attack",
+                            "id": 17
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_defense",
+                            "id": 18
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "individual_stamina",
+                            "id": 19
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "cp_multiplier",
+                            "id": 20
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokeball",
+                            "id": 21
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "uint64",
+                            "name": "captured_cell_id",
+                            "id": 22
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battles_attacked",
+                            "id": 23
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battles_defended",
+                            "id": 24
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "egg_incubator_id",
+                            "id": 25
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "uint64",
+                            "name": "creation_time_ms",
+                            "id": 26
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "num_upgrades",
+                            "id": 27
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "additional_cp_multiplier",
+                            "id": 28
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "favorite",
+                            "id": 29
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "nickname",
+                            "id": 30
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "from_fort",
+                            "id": 31
+                        }
+                    ]
+                },
+                {
+                    "name": "Item",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "ItemType",
+                            "name": "item",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "count",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "unseen",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "PokedexEntry",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokedex_entry_number",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "times_encountered",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "times_captured",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "evolution_stone_pieces",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "evolution_stones",
+                            "id": 5
+                        }
+                    ]
+                },
+                {
+                    "name": "PlayerStats",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "level",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "experience",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "prev_level_xp",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "next_level_xp",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "km_walked",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokemons_encountered",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "unique_pokedex_entries",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokemons_captured",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "evolutions",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "poke_stop_visits",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokeballs_thrown",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "eggs_hatched",
+                            "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "big_magikarp_caught",
+                            "id": 13
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battle_attack_won",
+                            "id": 14
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battle_attack_total",
+                            "id": 15
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battle_defended_won",
+                            "id": 16
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battle_training_won",
+                            "id": 17
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "battle_training_total",
+                            "id": 18
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "prestige_raised_total",
+                            "id": 19
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "prestige_dropped_total",
+                            "id": 20
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "pokemon_deployed",
+                            "id": 21
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "bytes",
+                            "name": "pokemon_caught_by_type",
+                            "id": 22
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "small_rattata_caught",
+                            "id": 23
+                        }
+                    ]
+                },
+                {
+                    "name": "PlayerCurrency",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "gems",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "PlayerCamera",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "bool",
+                            "name": "is_default_camera",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryUpgrades",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "InventoryUpgrade",
+                            "name": "inventory_upgrades",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryUpgrade",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "ItemType",
+                            "name": "item",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "InventoryUpgradeType",
+                            "name": "upgrade_type",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "additional_storage",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "AppliedItems",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "AppliedItem",
+                            "name": "item",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "AppliedItem",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "ItemId",
+                            "name": "item_type",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "ItemType",
+                            "name": "item_type_category",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "expire_ms",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "applied_ms",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "EggIncubators",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "EggIncubator",
+                            "name": "egg_incubator",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "EggIncubator",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "item_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "ItemType",
+                            "name": "item_type",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "EggIncubatorType",
+                            "name": "incubator_type",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "uses_remaining",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "pokemon_id",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "start_km_walked",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "target_km_walked",
+                            "id": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonFamily",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "PokemonFamilyId",
+                            "name": "family_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "candy",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "CatchPokemonResponse",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "CatchStatus",
+                            "name": "Status",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "MissPercent",
+                            "id": 2
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "CatchStatus",
+                            "values": [
+                                {
+                                    "name": "CATCH_ERROR",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "CATCH_SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "CATCH_ESCAPE",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "CATCH_FLEE",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "CATCH_MISSED",
+                                    "id": 4
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "CaptureAward",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "ActivityType",
+                            "name": "ActivityType",
+                            "id": 1
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "int32",
+                            "name": "XP",
+                            "id": 2
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "int32",
+                            "name": "Candy",
+                            "id": 3
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "int32",
+                            "name": "Stardust",
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "CaptureProbability",
+                    "fields": [
+                        {
+                            "rule": "repeated",
+                            "type": "ItemId",
+                            "name": "PokeballType",
+                            "id": 1
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "float",
+                            "name": "CaptureProbability",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "float",
+                            "name": "ReticleDifficultySize",
+                            "id": 12
+                        }
+                    ]
+                },
+                {
+                    "name": "EncounterResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "WildPokemonProto",
+                            "name": "WildPokemon",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Background",
+                            "name": "EncounterBackground",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Status",
+                            "name": "EncounterStatus",
+                            "id": 3
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "Background",
+                            "values": [
+                                {
+                                    "name": "PARK",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "DESERT",
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Status",
+                            "values": [
+                                {
+                                    "name": "ENCOUNTER_ERROR",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "ENCOUNTER_SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "ENCOUNTER_NOT_FOUND",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "ENCOUNTER_CLOSED",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "ENCOUNTER_POKEMON_FLED",
+                                    "id": 4
+                                },
+                                {
+                                    "name": "ENCOUNTER_NOT_IN_RANGE",
+                                    "id": 5
+                                },
+                                {
+                                    "name": "ENCOUNTER_ALREADY_HAPPENED",
+                                    "id": 6
+                                },
+                                {
+                                    "name": "POKEMON_INVENTORY_FULL",
+                                    "id": 7
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "FortSearchResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "Result",
+                            "name": "result",
+                            "id": 1
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "ItemAward",
+                            "name": "items_awarded",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "gems_awarded",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonData",
+                            "name": "pokemon_data_egg",
+                            "id": 4
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "experience_awarded",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "cooldown_complete_timestamp_ms",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "chain_hack_sequence_number",
+                            "id": 7
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "Result",
+                            "values": [
+                                {
+                                    "name": "NO_RESULT_SET",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "OUT_OF_RANGE",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "IN_COOLDOWN_PERIOD",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "INVENTORY_FULL",
+                                    "id": 4
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "FortDetailsResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "fort_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "TeamColor",
+                            "name": "team_color",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "PokemonData",
+                            "name": "pokemon_data",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "name",
+                            "id": 4
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "string",
+                            "name": "image_urls",
+                            "id": 5
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "fp",
+                            "id": 6
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "stamina",
+                            "id": 7
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "max_stamina",
+                            "id": 8
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "type",
+                            "id": 9
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "latitude",
+                            "id": 10
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "double",
+                            "name": "longitude",
+                            "id": 11
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "description",
+                            "id": 12
+                        },
+                        {
+                            "rule": "repeated",
+                            "type": "FortModifier",
+                            "name": "modifiers",
+                            "id": 13
+                        }
+                    ]
+                },
+                {
+                    "name": "FortModifier",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "ItemId",
+                            "name": "item_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int64",
+                            "name": "expiration_timestamp_ms",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "string",
+                            "name": "deployer_player_codename",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "RecycleInventoryItemResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "Result",
+                            "name": "result",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "new_count",
+                            "id": 2
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "Result",
+                            "values": [
+                                {
+                                    "name": "UNSET",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "ERROR_NOT_ENOUGH_COPIES",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "ERROR_CANNOT_RECYCLE_INCUBATORS",
+                                    "id": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "ItemAward",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "ItemId",
+                            "name": "item_id",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "item_count",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "ReleasePokemonResponse",
+                    "fields": [
+                        {
+                            "rule": "required",
+                            "type": "ReleaseStatus",
+                            "name": "Status",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "CandyAwarded",
+                            "id": 2
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "ReleaseStatus",
+                            "values": [
+                                {
+                                    "name": "UNSET",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "POKEMON_DEPLOYED",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "FAILED",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "ERROR_POKEMON_IS_EGG",
+                                    "id": 4
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "EvolvePokemonResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "EvolvePokemonStatus",
+                            "name": "Result",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "Pokemon",
+                            "name": "EvolvedPokemon",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "ExpAwarded",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "CandyAwarded",
+                            "id": 4
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "EvolvePokemonStatus",
+                            "values": [
+                                {
+                                    "name": "POKEMON_EVOLVED_UNSET",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "POKEMON_EVOLVED_SUCCESS",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "FAILED_POKEMON_MISSING",
+                                    "id": 2
+                                },
+                                {
+                                    "name": "FAILED_INSUFFICIENT_RESOURCES",
+                                    "id": 3
+                                },
+                                {
+                                    "name": "FAILED_POKEMON_CANNOT_EVOLVE",
+                                    "id": 4
+                                },
+                                {
+                                    "name": "FAILED_POKEMON_IS_DEPLOYED",
+                                    "id": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "TransferPokemonResponse",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "Status",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "type": "int32",
+                            "name": "CandyAwarded",
+                            "id": 2
+                        }
+                    ]
+                }
+            ],
+            "enums": [
+                {
+                    "name": "TeamColor",
+                    "values": [
+                        {
+                            "name": "NEUTRAL",
+                            "id": 0
+                        },
+                        {
+                            "name": "BLUE",
+                            "id": 1
+                        },
+                        {
+                            "name": "RED",
+                            "id": 2
+                        },
+                        {
+                            "name": "YELLOW",
+                            "id": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonMove",
+                    "values": [
+                        {
+                            "name": "MOVE_UNSET",
+                            "id": 0
+                        },
+                        {
+                            "name": "THUNDER_SHOCK",
+                            "id": 1
+                        },
+                        {
+                            "name": "QUICK_ATTACK",
+                            "id": 2
+                        },
+                        {
+                            "name": "SCRATCH",
+                            "id": 3
+                        },
+                        {
+                            "name": "EMBER",
+                            "id": 4
+                        },
+                        {
+                            "name": "VINE_WHIP",
+                            "id": 5
+                        },
+                        {
+                            "name": "TACKLE",
+                            "id": 6
+                        },
+                        {
+                            "name": "RAZOR_LEAF",
+                            "id": 7
+                        },
+                        {
+                            "name": "TAKE_DOWN",
+                            "id": 8
+                        },
+                        {
+                            "name": "WATER_GUN",
+                            "id": 9
+                        },
+                        {
+                            "name": "BITE",
+                            "id": 10
+                        },
+                        {
+                            "name": "POUND",
+                            "id": 11
+                        },
+                        {
+                            "name": "DOUBLE_SLAP",
+                            "id": 12
+                        },
+                        {
+                            "name": "WRAP",
+                            "id": 13
+                        },
+                        {
+                            "name": "HYPER_BEAM",
+                            "id": 14
+                        },
+                        {
+                            "name": "LICK",
+                            "id": 15
+                        },
+                        {
+                            "name": "DARK_PULSE",
+                            "id": 16
+                        },
+                        {
+                            "name": "SMOG",
+                            "id": 17
+                        },
+                        {
+                            "name": "SLUDGE",
+                            "id": 18
+                        },
+                        {
+                            "name": "METAL_CLAW",
+                            "id": 19
+                        },
+                        {
+                            "name": "VICE_GRIP",
+                            "id": 20
+                        },
+                        {
+                            "name": "FLAME_WHEEL",
+                            "id": 21
+                        },
+                        {
+                            "name": "MEGAHORN",
+                            "id": 22
+                        },
+                        {
+                            "name": "WING_ATTACK",
+                            "id": 23
+                        },
+                        {
+                            "name": "FLAMETHROWER",
+                            "id": 24
+                        },
+                        {
+                            "name": "SUCKER_PUNCH",
+                            "id": 25
+                        },
+                        {
+                            "name": "DIG",
+                            "id": 26
+                        },
+                        {
+                            "name": "LOW_KICK",
+                            "id": 27
+                        },
+                        {
+                            "name": "CROSS_CHOP",
+                            "id": 28
+                        },
+                        {
+                            "name": "PSYCHO_CUT",
+                            "id": 29
+                        },
+                        {
+                            "name": "PSYBEAM",
+                            "id": 30
+                        },
+                        {
+                            "name": "EARTHQUAKE",
+                            "id": 31
+                        },
+                        {
+                            "name": "STONE_EDGE",
+                            "id": 32
+                        },
+                        {
+                            "name": "ICE_PUNCH",
+                            "id": 33
+                        },
+                        {
+                            "name": "HEART_STAMP",
+                            "id": 34
+                        },
+                        {
+                            "name": "DISCHARGE",
+                            "id": 35
+                        },
+                        {
+                            "name": "FLASH_CANNON",
+                            "id": 36
+                        },
+                        {
+                            "name": "PECK",
+                            "id": 37
+                        },
+                        {
+                            "name": "DRILL_PECK",
+                            "id": 38
+                        },
+                        {
+                            "name": "ICE_BEAM",
+                            "id": 39
+                        },
+                        {
+                            "name": "BLIZZARD",
+                            "id": 40
+                        },
+                        {
+                            "name": "AIR_SLASH",
+                            "id": 41
+                        },
+                        {
+                            "name": "HEAT_WAVE",
+                            "id": 42
+                        },
+                        {
+                            "name": "TWINEEDLE",
+                            "id": 43
+                        },
+                        {
+                            "name": "POISON_JAB",
+                            "id": 44
+                        },
+                        {
+                            "name": "AERIAL_ACE",
+                            "id": 45
+                        },
+                        {
+                            "name": "DRILL_RUN",
+                            "id": 46
+                        },
+                        {
+                            "name": "PETAL_BLIZZARD",
+                            "id": 47
+                        },
+                        {
+                            "name": "MEGA_DRAIN",
+                            "id": 48
+                        },
+                        {
+                            "name": "BUG_BUZZ",
+                            "id": 49
+                        },
+                        {
+                            "name": "POISON_FANG",
+                            "id": 50
+                        },
+                        {
+                            "name": "NIGHT_SLASH",
+                            "id": 51
+                        },
+                        {
+                            "name": "SLASH",
+                            "id": 52
+                        },
+                        {
+                            "name": "BUBBLE_BEAM",
+                            "id": 53
+                        },
+                        {
+                            "name": "SUBMISSION",
+                            "id": 54
+                        },
+                        {
+                            "name": "KARATE_CHOP",
+                            "id": 55
+                        },
+                        {
+                            "name": "LOW_SWEEP",
+                            "id": 56
+                        },
+                        {
+                            "name": "AQUA_JET",
+                            "id": 57
+                        },
+                        {
+                            "name": "AQUA_TAIL",
+                            "id": 58
+                        },
+                        {
+                            "name": "SEED_BOMB",
+                            "id": 59
+                        },
+                        {
+                            "name": "PSYSHOCK",
+                            "id": 60
+                        },
+                        {
+                            "name": "ROCK_THROW",
+                            "id": 61
+                        },
+                        {
+                            "name": "ANCIENT_POWER",
+                            "id": 62
+                        },
+                        {
+                            "name": "ROCK_TOMB",
+                            "id": 63
+                        },
+                        {
+                            "name": "ROCK_SLIDE",
+                            "id": 64
+                        },
+                        {
+                            "name": "POWER_GEM",
+                            "id": 65
+                        },
+                        {
+                            "name": "SHADOW_SNEAK",
+                            "id": 66
+                        },
+                        {
+                            "name": "SHADOW_PUNCH",
+                            "id": 67
+                        },
+                        {
+                            "name": "SHADOW_CLAW",
+                            "id": 68
+                        },
+                        {
+                            "name": "OMINOUS_WIND",
+                            "id": 69
+                        },
+                        {
+                            "name": "SHADOW_BALL",
+                            "id": 70
+                        },
+                        {
+                            "name": "BULLET_PUNCH",
+                            "id": 71
+                        },
+                        {
+                            "name": "MAGNET_BOMB",
+                            "id": 72
+                        },
+                        {
+                            "name": "STEEL_WING",
+                            "id": 73
+                        },
+                        {
+                            "name": "IRON_HEAD",
+                            "id": 74
+                        },
+                        {
+                            "name": "PARABOLIC_CHARGE",
+                            "id": 75
+                        },
+                        {
+                            "name": "SPARK",
+                            "id": 76
+                        },
+                        {
+                            "name": "THUNDER_PUNCH",
+                            "id": 77
+                        },
+                        {
+                            "name": "THUNDER",
+                            "id": 78
+                        },
+                        {
+                            "name": "THUNDERBOLT",
+                            "id": 79
+                        },
+                        {
+                            "name": "TWISTER",
+                            "id": 80
+                        },
+                        {
+                            "name": "DRAGON_BREATH",
+                            "id": 81
+                        },
+                        {
+                            "name": "DRAGON_PULSE",
+                            "id": 82
+                        },
+                        {
+                            "name": "DRAGON_CLAW",
+                            "id": 83
+                        },
+                        {
+                            "name": "DISARMING_VOICE",
+                            "id": 84
+                        },
+                        {
+                            "name": "DRAINING_KISS",
+                            "id": 85
+                        },
+                        {
+                            "name": "DAZZLING_GLEAM",
+                            "id": 86
+                        },
+                        {
+                            "name": "MOONBLAST",
+                            "id": 87
+                        },
+                        {
+                            "name": "PLAY_ROUGH",
+                            "id": 88
+                        },
+                        {
+                            "name": "CROSS_POISON",
+                            "id": 89
+                        },
+                        {
+                            "name": "SLUDGE_BOMB",
+                            "id": 90
+                        },
+                        {
+                            "name": "SLUDGE_WAVE",
+                            "id": 91
+                        },
+                        {
+                            "name": "GUNK_SHOT",
+                            "id": 92
+                        },
+                        {
+                            "name": "MUD_SHOT",
+                            "id": 93
+                        },
+                        {
+                            "name": "BONE_CLUB",
+                            "id": 94
+                        },
+                        {
+                            "name": "BULLDOZE",
+                            "id": 95
+                        },
+                        {
+                            "name": "MUD_BOMB",
+                            "id": 96
+                        },
+                        {
+                            "name": "FURY_CUTTER",
+                            "id": 97
+                        },
+                        {
+                            "name": "BUG_BITE",
+                            "id": 98
+                        },
+                        {
+                            "name": "SIGNAL_BEAM",
+                            "id": 99
+                        },
+                        {
+                            "name": "X_SCISSOR",
+                            "id": 100
+                        },
+                        {
+                            "name": "FLAME_CHARGE",
+                            "id": 101
+                        },
+                        {
+                            "name": "FLAME_BURST",
+                            "id": 102
+                        },
+                        {
+                            "name": "FIRE_BLAST",
+                            "id": 103
+                        },
+                        {
+                            "name": "BRINE",
+                            "id": 104
+                        },
+                        {
+                            "name": "WATER_PULSE",
+                            "id": 105
+                        },
+                        {
+                            "name": "SCALD",
+                            "id": 106
+                        },
+                        {
+                            "name": "HYDRO_PUMP",
+                            "id": 107
+                        },
+                        {
+                            "name": "PSYCHIC",
+                            "id": 108
+                        },
+                        {
+                            "name": "PSYSTRIKE",
+                            "id": 109
+                        },
+                        {
+                            "name": "ICE_SHARD",
+                            "id": 110
+                        },
+                        {
+                            "name": "ICY_WIND",
+                            "id": 111
+                        },
+                        {
+                            "name": "FROST_BREATH",
+                            "id": 112
+                        },
+                        {
+                            "name": "ABSORB",
+                            "id": 113
+                        },
+                        {
+                            "name": "GIGA_DRAIN",
+                            "id": 114
+                        },
+                        {
+                            "name": "FIRE_PUNCH",
+                            "id": 115
+                        },
+                        {
+                            "name": "SOLAR_BEAM",
+                            "id": 116
+                        },
+                        {
+                            "name": "LEAF_BLADE",
+                            "id": 117
+                        },
+                        {
+                            "name": "POWER_WHIP",
+                            "id": 118
+                        },
+                        {
+                            "name": "SPLASH",
+                            "id": 119
+                        },
+                        {
+                            "name": "ACID",
+                            "id": 120
+                        },
+                        {
+                            "name": "AIR_CUTTER",
+                            "id": 121
+                        },
+                        {
+                            "name": "HURRICANE",
+                            "id": 122
+                        },
+                        {
+                            "name": "BRICK_BREAK",
+                            "id": 123
+                        },
+                        {
+                            "name": "CUT",
+                            "id": 124
+                        },
+                        {
+                            "name": "SWIFT",
+                            "id": 125
+                        },
+                        {
+                            "name": "HORN_ATTACK",
+                            "id": 126
+                        },
+                        {
+                            "name": "STOMP",
+                            "id": 127
+                        },
+                        {
+                            "name": "HEADBUTT",
+                            "id": 128
+                        },
+                        {
+                            "name": "HYPER_FANG",
+                            "id": 129
+                        },
+                        {
+                            "name": "SLAM",
+                            "id": 130
+                        },
+                        {
+                            "name": "BODY_SLAM",
+                            "id": 131
+                        },
+                        {
+                            "name": "REST",
+                            "id": 132
+                        },
+                        {
+                            "name": "STRUGGLE",
+                            "id": 133
+                        },
+                        {
+                            "name": "SCALD_BLASTOISE",
+                            "id": 134
+                        },
+                        {
+                            "name": "HYDRO_PUMP_BLASTOISE",
+                            "id": 135
+                        },
+                        {
+                            "name": "WRAP_GREEN",
+                            "id": 136
+                        },
+                        {
+                            "name": "WRAP_PINK",
+                            "id": 137
+                        },
+                        {
+                            "name": "FURY_CUTTER_FAST",
+                            "id": 200
+                        },
+                        {
+                            "name": "BUG_BITE_FAST",
+                            "id": 201
+                        },
+                        {
+                            "name": "BITE_FAST",
+                            "id": 202
+                        },
+                        {
+                            "name": "SUCKER_PUNCH_FAST",
+                            "id": 203
+                        },
+                        {
+                            "name": "DRAGON_BREATH_FAST",
+                            "id": 204
+                        },
+                        {
+                            "name": "THUNDER_SHOCK_FAST",
+                            "id": 205
+                        },
+                        {
+                            "name": "SPARK_FAST",
+                            "id": 206
+                        },
+                        {
+                            "name": "LOW_KICK_FAST",
+                            "id": 207
+                        },
+                        {
+                            "name": "KARATE_CHOP_FAST",
+                            "id": 208
+                        },
+                        {
+                            "name": "EMBER_FAST",
+                            "id": 209
+                        },
+                        {
+                            "name": "WING_ATTACK_FAST",
+                            "id": 210
+                        },
+                        {
+                            "name": "PECK_FAST",
+                            "id": 211
+                        },
+                        {
+                            "name": "LICK_FAST",
+                            "id": 212
+                        },
+                        {
+                            "name": "SHADOW_CLAW_FAST",
+                            "id": 213
+                        },
+                        {
+                            "name": "VINE_WHIP_FAST",
+                            "id": 214
+                        },
+                        {
+                            "name": "RAZOR_LEAF_FAST",
+                            "id": 215
+                        },
+                        {
+                            "name": "MUD_SHOT_FAST",
+                            "id": 216
+                        },
+                        {
+                            "name": "ICE_SHARD_FAST",
+                            "id": 217
+                        },
+                        {
+                            "name": "FROST_BREATH_FAST",
+                            "id": 218
+                        },
+                        {
+                            "name": "QUICK_ATTACK_FAST",
+                            "id": 219
+                        },
+                        {
+                            "name": "SCRATCH_FAST",
+                            "id": 220
+                        },
+                        {
+                            "name": "TACKLE_FAST",
+                            "id": 221
+                        },
+                        {
+                            "name": "POUND_FAST",
+                            "id": 222
+                        },
+                        {
+                            "name": "CUT_FAST",
+                            "id": 223
+                        },
+                        {
+                            "name": "POISON_JAB_FAST",
+                            "id": 224
+                        },
+                        {
+                            "name": "ACID_FAST",
+                            "id": 225
+                        },
+                        {
+                            "name": "PSYCHO_CUT_FAST",
+                            "id": 226
+                        },
+                        {
+                            "name": "ROCK_THROW_FAST",
+                            "id": 227
+                        },
+                        {
+                            "name": "METAL_CLAW_FAST",
+                            "id": 228
+                        },
+                        {
+                            "name": "BULLET_PUNCH_FAST",
+                            "id": 229
+                        },
+                        {
+                            "name": "WATER_GUN_FAST",
+                            "id": 230
+                        },
+                        {
+                            "name": "SPLASH_FAST",
+                            "id": 231
+                        },
+                        {
+                            "name": "WATER_GUN_FAST_BLASTOISE",
+                            "id": 232
+                        },
+                        {
+                            "name": "MUD_SLAP_FAST",
+                            "id": 233
+                        },
+                        {
+                            "name": "ZEN_HEADBUTT_FAST",
+                            "id": 234
+                        },
+                        {
+                            "name": "CONFUSION_FAST",
+                            "id": 235
+                        },
+                        {
+                            "name": "POISON_STING_FAST",
+                            "id": 236
+                        },
+                        {
+                            "name": "BUBBLE_FAST",
+                            "id": 237
+                        },
+                        {
+                            "name": "FEINT_ATTACK_FAST",
+                            "id": 238
+                        },
+                        {
+                            "name": "STEEL_WING_FAST",
+                            "id": 239
+                        },
+                        {
+                            "name": "FIRE_FANG_FAST",
+                            "id": 240
+                        },
+                        {
+                            "name": "ROCK_SMASH_FAST",
+                            "id": 241
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonId",
+                    "values": [
+                        {
+                            "name": "MISSINGNO",
+                            "id": 0
+                        },
+                        {
+                            "name": "BULBASAUR",
+                            "id": 1
+                        },
+                        {
+                            "name": "IVYSAUR",
+                            "id": 2
+                        },
+                        {
+                            "name": "VENUSAUR",
+                            "id": 3
+                        },
+                        {
+                            "name": "CHARMENDER",
+                            "id": 4
+                        },
+                        {
+                            "name": "CHARMELEON",
+                            "id": 5
+                        },
+                        {
+                            "name": "CHARIZARD",
+                            "id": 6
+                        },
+                        {
+                            "name": "SQUIRTLE",
+                            "id": 7
+                        },
+                        {
+                            "name": "WARTORTLE",
+                            "id": 8
+                        },
+                        {
+                            "name": "BLASTOISE",
+                            "id": 9
+                        },
+                        {
+                            "name": "CATERPIE",
+                            "id": 10
+                        },
+                        {
+                            "name": "METAPOD",
+                            "id": 11
+                        },
+                        {
+                            "name": "BUTTERFREE",
+                            "id": 12
+                        },
+                        {
+                            "name": "WEEDLE",
+                            "id": 13
+                        },
+                        {
+                            "name": "KAKUNA",
+                            "id": 14
+                        },
+                        {
+                            "name": "BEEDRILL",
+                            "id": 15
+                        },
+                        {
+                            "name": "PIDGEY",
+                            "id": 16
+                        },
+                        {
+                            "name": "PIDGEOTTO",
+                            "id": 17
+                        },
+                        {
+                            "name": "PIDGEOT",
+                            "id": 18
+                        },
+                        {
+                            "name": "RATTATA",
+                            "id": 19
+                        },
+                        {
+                            "name": "RATICATE",
+                            "id": 20
+                        },
+                        {
+                            "name": "SPEAROW",
+                            "id": 21
+                        },
+                        {
+                            "name": "FEAROW",
+                            "id": 22
+                        },
+                        {
+                            "name": "EKANS",
+                            "id": 23
+                        },
+                        {
+                            "name": "ARBOK",
+                            "id": 24
+                        },
+                        {
+                            "name": "PIKACHU",
+                            "id": 25
+                        },
+                        {
+                            "name": "RAICHU",
+                            "id": 26
+                        },
+                        {
+                            "name": "SANDSHREW",
+                            "id": 27
+                        },
+                        {
+                            "name": "SANDLASH",
+                            "id": 28
+                        },
+                        {
+                            "name": "NIDORAN_FEMALE",
+                            "id": 29
+                        },
+                        {
+                            "name": "NIDORINA",
+                            "id": 30
+                        },
+                        {
+                            "name": "NIDOQUEEN",
+                            "id": 31
+                        },
+                        {
+                            "name": "NIDORAN_MALE",
+                            "id": 32
+                        },
+                        {
+                            "name": "NIDORINO",
+                            "id": 33
+                        },
+                        {
+                            "name": "NIDOKING",
+                            "id": 34
+                        },
+                        {
+                            "name": "CLEFARY",
+                            "id": 35
+                        },
+                        {
+                            "name": "CLEFABLE",
+                            "id": 36
+                        },
+                        {
+                            "name": "VULPIX",
+                            "id": 37
+                        },
+                        {
+                            "name": "NINETALES",
+                            "id": 38
+                        },
+                        {
+                            "name": "JIGGLYPUFF",
+                            "id": 39
+                        },
+                        {
+                            "name": "WIGGLYTUFF",
+                            "id": 40
+                        },
+                        {
+                            "name": "ZUBAT",
+                            "id": 41
+                        },
+                        {
+                            "name": "GOLBAT",
+                            "id": 42
+                        },
+                        {
+                            "name": "ODDISH",
+                            "id": 43
+                        },
+                        {
+                            "name": "GLOOM",
+                            "id": 44
+                        },
+                        {
+                            "name": "VILEPLUME",
+                            "id": 45
+                        },
+                        {
+                            "name": "PARAS",
+                            "id": 46
+                        },
+                        {
+                            "name": "PARASECT",
+                            "id": 47
+                        },
+                        {
+                            "name": "VENONAT",
+                            "id": 48
+                        },
+                        {
+                            "name": "VENOMOTH",
+                            "id": 49
+                        },
+                        {
+                            "name": "DIGLETT",
+                            "id": 50
+                        },
+                        {
+                            "name": "DUGTRIO",
+                            "id": 51
+                        },
+                        {
+                            "name": "MEOWTH",
+                            "id": 52
+                        },
+                        {
+                            "name": "PERSIAN",
+                            "id": 53
+                        },
+                        {
+                            "name": "PSYDUCK",
+                            "id": 54
+                        },
+                        {
+                            "name": "GOLDUCK",
+                            "id": 55
+                        },
+                        {
+                            "name": "MANKEY",
+                            "id": 56
+                        },
+                        {
+                            "name": "PRIMEAPE",
+                            "id": 57
+                        },
+                        {
+                            "name": "GROWLITHE",
+                            "id": 58
+                        },
+                        {
+                            "name": "ARCANINE",
+                            "id": 59
+                        },
+                        {
+                            "name": "POLIWAG",
+                            "id": 60
+                        },
+                        {
+                            "name": "POLIWHIRL",
+                            "id": 61
+                        },
+                        {
+                            "name": "POLIWRATH",
+                            "id": 62
+                        },
+                        {
+                            "name": "ABRA",
+                            "id": 63
+                        },
+                        {
+                            "name": "KADABRA",
+                            "id": 64
+                        },
+                        {
+                            "name": "ALAKHAZAM",
+                            "id": 65
+                        },
+                        {
+                            "name": "MACHOP",
+                            "id": 66
+                        },
+                        {
+                            "name": "MACHOKE",
+                            "id": 67
+                        },
+                        {
+                            "name": "MACHAMP",
+                            "id": 68
+                        },
+                        {
+                            "name": "BELLSPROUT",
+                            "id": 69
+                        },
+                        {
+                            "name": "WEEPINBELL",
+                            "id": 70
+                        },
+                        {
+                            "name": "VICTREEBELL",
+                            "id": 71
+                        },
+                        {
+                            "name": "TENTACOOL",
+                            "id": 72
+                        },
+                        {
+                            "name": "TENTACRUEL",
+                            "id": 73
+                        },
+                        {
+                            "name": "GEODUGE",
+                            "id": 74
+                        },
+                        {
+                            "name": "GRAVELER",
+                            "id": 75
+                        },
+                        {
+                            "name": "GOLEM",
+                            "id": 76
+                        },
+                        {
+                            "name": "PONYTA",
+                            "id": 77
+                        },
+                        {
+                            "name": "RAPIDASH",
+                            "id": 78
+                        },
+                        {
+                            "name": "SLOWPOKE",
+                            "id": 79
+                        },
+                        {
+                            "name": "SLOWBRO",
+                            "id": 80
+                        },
+                        {
+                            "name": "MAGNEMITE",
+                            "id": 81
+                        },
+                        {
+                            "name": "MAGNETON",
+                            "id": 82
+                        },
+                        {
+                            "name": "FARFETCHD",
+                            "id": 83
+                        },
+                        {
+                            "name": "DODUO",
+                            "id": 84
+                        },
+                        {
+                            "name": "DODRIO",
+                            "id": 85
+                        },
+                        {
+                            "name": "SEEL",
+                            "id": 86
+                        },
+                        {
+                            "name": "DEWGONG",
+                            "id": 87
+                        },
+                        {
+                            "name": "GRIMER",
+                            "id": 88
+                        },
+                        {
+                            "name": "MUK",
+                            "id": 89
+                        },
+                        {
+                            "name": "SHELLDER",
+                            "id": 90
+                        },
+                        {
+                            "name": "CLOYSTER",
+                            "id": 91
+                        },
+                        {
+                            "name": "GASTLY",
+                            "id": 92
+                        },
+                        {
+                            "name": "HAUNTER",
+                            "id": 93
+                        },
+                        {
+                            "name": "GENGAR",
+                            "id": 94
+                        },
+                        {
+                            "name": "ONIX",
+                            "id": 95
+                        },
+                        {
+                            "name": "DROWZEE",
+                            "id": 96
+                        },
+                        {
+                            "name": "HYPNO",
+                            "id": 97
+                        },
+                        {
+                            "name": "KRABBY",
+                            "id": 98
+                        },
+                        {
+                            "name": "KINGLER",
+                            "id": 99
+                        },
+                        {
+                            "name": "VOLTORB",
+                            "id": 100
+                        },
+                        {
+                            "name": "ELECTRODE",
+                            "id": 101
+                        },
+                        {
+                            "name": "EXEGGCUTE",
+                            "id": 102
+                        },
+                        {
+                            "name": "EXEGGUTOR",
+                            "id": 103
+                        },
+                        {
+                            "name": "CUBONE",
+                            "id": 104
+                        },
+                        {
+                            "name": "MAROWAK",
+                            "id": 105
+                        },
+                        {
+                            "name": "HITMONLEE",
+                            "id": 106
+                        },
+                        {
+                            "name": "HITMONCHAN",
+                            "id": 107
+                        },
+                        {
+                            "name": "LICKITUNG",
+                            "id": 108
+                        },
+                        {
+                            "name": "KOFFING",
+                            "id": 109
+                        },
+                        {
+                            "name": "WEEZING",
+                            "id": 110
+                        },
+                        {
+                            "name": "RHYHORN",
+                            "id": 111
+                        },
+                        {
+                            "name": "RHYDON",
+                            "id": 112
+                        },
+                        {
+                            "name": "CHANSEY",
+                            "id": 113
+                        },
+                        {
+                            "name": "TANGELA",
+                            "id": 114
+                        },
+                        {
+                            "name": "KANGASKHAN",
+                            "id": 115
+                        },
+                        {
+                            "name": "HORSEA",
+                            "id": 116
+                        },
+                        {
+                            "name": "SEADRA",
+                            "id": 117
+                        },
+                        {
+                            "name": "GOLDEEN",
+                            "id": 118
+                        },
+                        {
+                            "name": "SEAKING",
+                            "id": 119
+                        },
+                        {
+                            "name": "STARYU",
+                            "id": 120
+                        },
+                        {
+                            "name": "STARMIE",
+                            "id": 121
+                        },
+                        {
+                            "name": "MR_MIME",
+                            "id": 122
+                        },
+                        {
+                            "name": "SCYTHER",
+                            "id": 123
+                        },
+                        {
+                            "name": "JYNX",
+                            "id": 124
+                        },
+                        {
+                            "name": "ELECTABUZZ",
+                            "id": 125
+                        },
+                        {
+                            "name": "MAGMAR",
+                            "id": 126
+                        },
+                        {
+                            "name": "PINSIR",
+                            "id": 127
+                        },
+                        {
+                            "name": "TAUROS",
+                            "id": 128
+                        },
+                        {
+                            "name": "MAGIKARP",
+                            "id": 129
+                        },
+                        {
+                            "name": "GYARADOS",
+                            "id": 130
+                        },
+                        {
+                            "name": "LAPRAS",
+                            "id": 131
+                        },
+                        {
+                            "name": "DITTO",
+                            "id": 132
+                        },
+                        {
+                            "name": "EEVEE",
+                            "id": 133
+                        },
+                        {
+                            "name": "VAPOREON",
+                            "id": 134
+                        },
+                        {
+                            "name": "JOLTEON",
+                            "id": 135
+                        },
+                        {
+                            "name": "FLAREON",
+                            "id": 136
+                        },
+                        {
+                            "name": "PORYGON",
+                            "id": 137
+                        },
+                        {
+                            "name": "OMANYTE",
+                            "id": 138
+                        },
+                        {
+                            "name": "OMASTAR",
+                            "id": 139
+                        },
+                        {
+                            "name": "KABUTO",
+                            "id": 140
+                        },
+                        {
+                            "name": "KABUTOPS",
+                            "id": 141
+                        },
+                        {
+                            "name": "AERODACTYL",
+                            "id": 142
+                        },
+                        {
+                            "name": "SNORLAX",
+                            "id": 143
+                        },
+                        {
+                            "name": "ARTICUNO",
+                            "id": 144
+                        },
+                        {
+                            "name": "ZAPDOS",
+                            "id": 145
+                        },
+                        {
+                            "name": "MOLTRES",
+                            "id": 146
+                        },
+                        {
+                            "name": "DRATINI",
+                            "id": 147
+                        },
+                        {
+                            "name": "DRAGONAIR",
+                            "id": 148
+                        },
+                        {
+                            "name": "DRAGONITE",
+                            "id": 149
+                        },
+                        {
+                            "name": "MEWTWO",
+                            "id": 150
+                        },
+                        {
+                            "name": "MEW",
+                            "id": 151
+                        }
+                    ]
+                },
+                {
+                    "name": "ItemType",
+                    "values": [
+                        {
+                            "name": "ITEM_TYPE_NONE",
+                            "id": 0
+                        },
+                        {
+                            "name": "ITEM_TYPE_POKEBALL",
+                            "id": 1
+                        },
+                        {
+                            "name": "ITEM_TYPE_POTION",
+                            "id": 2
+                        },
+                        {
+                            "name": "ITEM_TYPE_REVIVE",
+                            "id": 3
+                        },
+                        {
+                            "name": "ITEM_TYPE_MAP",
+                            "id": 4
+                        },
+                        {
+                            "name": "ITEM_TYPE_BATTLE",
+                            "id": 5
+                        },
+                        {
+                            "name": "ITEM_TYPE_FOOD",
+                            "id": 6
+                        },
+                        {
+                            "name": "ITEM_TYPE_CAMERA",
+                            "id": 7
+                        },
+                        {
+                            "name": "ITEM_TYPE_DISK",
+                            "id": 8
+                        },
+                        {
+                            "name": "ITEM_TYPE_INCUBATOR",
+                            "id": 9
+                        },
+                        {
+                            "name": "ITEM_TYPE_INCENSE",
+                            "id": 10
+                        },
+                        {
+                            "name": "ITEM_TYPE_XP_BOOST",
+                            "id": 11
+                        },
+                        {
+                            "name": "ITEM_TYPE_INVENTORY_UPGRADE",
+                            "id": 12
+                        }
+                    ]
+                },
+                {
+                    "name": "InventoryUpgradeType",
+                    "values": [
+                        {
+                            "name": "UPGRADE_UNSET",
+                            "id": 0
+                        },
+                        {
+                            "name": "INCREASE_ITEM_STORAGE",
+                            "id": 1
+                        },
+                        {
+                            "name": "INCREASE_POKEMON_STORAGE",
+                            "id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "ItemId",
+                    "values": [
+                        {
+                            "name": "ITEM_UNKNOWN",
+                            "id": 0
+                        },
+                        {
+                            "name": "ITEM_POKE_BALL",
+                            "id": 1
+                        },
+                        {
+                            "name": "ITEM_GREAT_BALL",
+                            "id": 2
+                        },
+                        {
+                            "name": "ITEM_ULTRA_BALL",
+                            "id": 3
+                        },
+                        {
+                            "name": "ITEM_MASTER_BALL",
+                            "id": 4
+                        },
+                        {
+                            "name": "ITEM_POTION",
+                            "id": 101
+                        },
+                        {
+                            "name": "ITEM_SUPER_POTION",
+                            "id": 102
+                        },
+                        {
+                            "name": "ITEM_HYPER_POTION",
+                            "id": 103
+                        },
+                        {
+                            "name": "ITEM_MAX_POTION",
+                            "id": 104
+                        },
+                        {
+                            "name": "ITEM_REVIVE",
+                            "id": 201
+                        },
+                        {
+                            "name": "ITEM_MAX_REVIVE",
+                            "id": 202
+                        },
+                        {
+                            "name": "ITEM_LUCKY_EGG",
+                            "id": 301
+                        },
+                        {
+                            "name": "ITEM_INCENSE_ORDINARY",
+                            "id": 401
+                        },
+                        {
+                            "name": "ITEM_INCENSE_SPICY",
+                            "id": 402
+                        },
+                        {
+                            "name": "ITEM_INCENSE_COOL",
+                            "id": 403
+                        },
+                        {
+                            "name": "ITEM_INCENSE_FLORAL",
+                            "id": 404
+                        },
+                        {
+                            "name": "ITEM_TROY_DISK",
+                            "id": 501
+                        },
+                        {
+                            "name": "ITEM_X_ATTACK",
+                            "id": 602
+                        },
+                        {
+                            "name": "ITEM_X_DEFENSE",
+                            "id": 603
+                        },
+                        {
+                            "name": "ITEM_X_MIRACLE",
+                            "id": 604
+                        },
+                        {
+                            "name": "ITEM_RAZZ_BERRY",
+                            "id": 701
+                        },
+                        {
+                            "name": "ITEM_BLUK_BERRY",
+                            "id": 702
+                        },
+                        {
+                            "name": "ITEM_NANAB_BERRY",
+                            "id": 703
+                        },
+                        {
+                            "name": "ITEM_WEPAR_BERRY",
+                            "id": 704
+                        },
+                        {
+                            "name": "ITEM_PINAP_BERRY",
+                            "id": 705
+                        },
+                        {
+                            "name": "ITEM_SPECIAL_CAMERA",
+                            "id": 801
+                        },
+                        {
+                            "name": "ITEM_INCUBATOR_BASIC_UNLIMITED",
+                            "id": 901
+                        },
+                        {
+                            "name": "ITEM_INCUBATOR_BASIC",
+                            "id": 902
+                        },
+                        {
+                            "name": "ITEM_POKEMON_STORAGE_UPGRADE",
+                            "id": 1001
+                        },
+                        {
+                            "name": "ITEM_ITEM_STORAGE_UPGRADE",
+                            "id": 1002
+                        }
+                    ]
+                },
+                {
+                    "name": "EggIncubatorType",
+                    "values": [
+                        {
+                            "name": "INCUBATOR_UNSET",
+                            "id": 0
+                        },
+                        {
+                            "name": "INCUBATOR_DISTANCE",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "PokemonFamilyId",
+                    "values": [
+                        {
+                            "name": "FAMILY_UNSET",
+                            "id": 0
+                        },
+                        {
+                            "name": "FAMILY_BULBASAUR",
+                            "id": 1
+                        },
+                        {
+                            "name": "FAMILY_CHARMANDER",
+                            "id": 4
+                        },
+                        {
+                            "name": "FAMILY_SQUIRTLE",
+                            "id": 7
+                        },
+                        {
+                            "name": "FAMILY_CATERPIE",
+                            "id": 10
+                        },
+                        {
+                            "name": "FAMILY_WEEDLE",
+                            "id": 13
+                        },
+                        {
+                            "name": "FAMILY_PIDGEY",
+                            "id": 16
+                        },
+                        {
+                            "name": "FAMILY_RATTATA",
+                            "id": 19
+                        },
+                        {
+                            "name": "FAMILY_SPEAROW",
+                            "id": 21
+                        },
+                        {
+                            "name": "FAMILY_EKANS",
+                            "id": 23
+                        },
+                        {
+                            "name": "FAMILY_PIKACHU",
+                            "id": 25
+                        },
+                        {
+                            "name": "FAMILY_SANDSHREW",
+                            "id": 27
+                        },
+                        {
+                            "name": "FAMILY_NIDORAN",
+                            "id": 29
+                        },
+                        {
+                            "name": "FAMILY_NIDORAN2",
+                            "id": 32
+                        },
+                        {
+                            "name": "FAMILY_CLEFAIRY",
+                            "id": 35
+                        },
+                        {
+                            "name": "FAMILY_VULPIX",
+                            "id": 37
+                        },
+                        {
+                            "name": "FAMILY_JIGGLYPUFF",
+                            "id": 39
+                        },
+                        {
+                            "name": "FAMILY_ZUBAT",
+                            "id": 41
+                        },
+                        {
+                            "name": "FAMILY_ODDISH",
+                            "id": 43
+                        },
+                        {
+                            "name": "FAMILY_PARAS",
+                            "id": 46
+                        },
+                        {
+                            "name": "FAMILY_VENONAT",
+                            "id": 48
+                        },
+                        {
+                            "name": "FAMILY_DIGLETT",
+                            "id": 50
+                        },
+                        {
+                            "name": "FAMILY_MEOWTH",
+                            "id": 52
+                        },
+                        {
+                            "name": "FAMILY_PSYDUCK",
+                            "id": 54
+                        },
+                        {
+                            "name": "FAMILY_MANKEY",
+                            "id": 56
+                        },
+                        {
+                            "name": "FAMILY_GROWLITHE",
+                            "id": 58
+                        },
+                        {
+                            "name": "FAMILY_POLIWAG",
+                            "id": 60
+                        },
+                        {
+                            "name": "FAMILY_ABRA",
+                            "id": 63
+                        },
+                        {
+                            "name": "FAMILY_MACHOP",
+                            "id": 66
+                        },
+                        {
+                            "name": "FAMILY_BELLSPROUT",
+                            "id": 69
+                        },
+                        {
+                            "name": "FAMILY_TENTACOOL",
+                            "id": 72
+                        },
+                        {
+                            "name": "FAMILY_GEODUDE",
+                            "id": 74
+                        },
+                        {
+                            "name": "FAMILY_PONYTA",
+                            "id": 77
+                        },
+                        {
+                            "name": "FAMILY_SLOWPOKE",
+                            "id": 79
+                        },
+                        {
+                            "name": "FAMILY_MAGNEMITE",
+                            "id": 81
+                        },
+                        {
+                            "name": "FAMILY_FARFETCHD",
+                            "id": 83
+                        },
+                        {
+                            "name": "FAMILY_DODUO",
+                            "id": 84
+                        },
+                        {
+                            "name": "FAMILY_SEEL",
+                            "id": 86
+                        },
+                        {
+                            "name": "FAMILY_GRIMER",
+                            "id": 88
+                        },
+                        {
+                            "name": "FAMILY_SHELLDER",
+                            "id": 90
+                        },
+                        {
+                            "name": "FAMILY_GASTLY",
+                            "id": 92
+                        },
+                        {
+                            "name": "FAMILY_ONIX",
+                            "id": 95
+                        },
+                        {
+                            "name": "FAMILY_DROWZEE",
+                            "id": 96
+                        },
+                        {
+                            "name": "FAMILY_KRABBY",
+                            "id": 98
+                        },
+                        {
+                            "name": "FAMILY_VOLTORB",
+                            "id": 100
+                        },
+                        {
+                            "name": "FAMILY_EXEGGCUTE",
+                            "id": 102
+                        },
+                        {
+                            "name": "FAMILY_CUBONE",
+                            "id": 104
+                        },
+                        {
+                            "name": "FAMILY_HITMONLEE",
+                            "id": 106
+                        },
+                        {
+                            "name": "FAMILY_HITMONCHAN",
+                            "id": 107
+                        },
+                        {
+                            "name": "FAMILY_LICKITUNG",
+                            "id": 108
+                        },
+                        {
+                            "name": "FAMILY_KOFFING",
+                            "id": 109
+                        },
+                        {
+                            "name": "FAMILY_RHYHORN",
+                            "id": 111
+                        },
+                        {
+                            "name": "FAMILY_CHANSEY",
+                            "id": 113
+                        },
+                        {
+                            "name": "FAMILY_TANGELA",
+                            "id": 114
+                        },
+                        {
+                            "name": "FAMILY_KANGASKHAN",
+                            "id": 115
+                        },
+                        {
+                            "name": "FAMILY_HORSEA",
+                            "id": 116
+                        },
+                        {
+                            "name": "FAMILY_GOLDEEN",
+                            "id": 118
+                        },
+                        {
+                            "name": "FAMILY_STARYU",
+                            "id": 120
+                        },
+                        {
+                            "name": "FAMILY_MR_MIME",
+                            "id": 122
+                        },
+                        {
+                            "name": "FAMILY_SCYTHER",
+                            "id": 123
+                        },
+                        {
+                            "name": "FAMILY_JYNX",
+                            "id": 124
+                        },
+                        {
+                            "name": "FAMILY_ELECTABUZZ",
+                            "id": 125
+                        },
+                        {
+                            "name": "FAMILY_MAGMAR",
+                            "id": 126
+                        },
+                        {
+                            "name": "FAMILY_PINSIR",
+                            "id": 127
+                        },
+                        {
+                            "name": "FAMILY_TAUROS",
+                            "id": 128
+                        },
+                        {
+                            "name": "FAMILY_MAGIKARP",
+                            "id": 129
+                        },
+                        {
+                            "name": "FAMILY_LAPRAS",
+                            "id": 131
+                        },
+                        {
+                            "name": "FAMILY_DITTO",
+                            "id": 132
+                        },
+                        {
+                            "name": "FAMILY_EEVEE",
+                            "id": 133
+                        },
+                        {
+                            "name": "FAMILY_PORYGON",
+                            "id": 137
+                        },
+                        {
+                            "name": "FAMILY_OMANYTE",
+                            "id": 138
+                        },
+                        {
+                            "name": "FAMILY_KABUTO",
+                            "id": 140
+                        },
+                        {
+                            "name": "FAMILY_AERODACTYL",
+                            "id": 142
+                        },
+                        {
+                            "name": "FAMILY_SNORLAX",
+                            "id": 143
+                        },
+                        {
+                            "name": "FAMILY_ARTICUNO",
+                            "id": 144
+                        },
+                        {
+                            "name": "FAMILY_ZAPDOS",
+                            "id": 145
+                        },
+                        {
+                            "name": "FAMILY_MOLTRES",
+                            "id": 146
+                        },
+                        {
+                            "name": "FAMILY_DRATINI",
+                            "id": 147
+                        },
+                        {
+                            "name": "FAMILY_MEWTWO",
+                            "id": 150
+                        },
+                        {
+                            "name": "FAMILY_MEW",
+                            "id": 151
+                        }
+                    ]
+                },
+                {
+                    "name": "FortType",
+                    "values": [
+                        {
+                            "name": "GYM",
+                            "id": 0
+                        },
+                        {
+                            "name": "CHECKPOINT",
+                            "id": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "ActivityType",
+                    "values": [
+                        {
+                            "name": "ACTIVITY_UNKNOWN",
+                            "id": 0
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_POKEMON",
+                            "id": 1
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_LEGEND_POKEMON",
+                            "id": 2
+                        },
+                        {
+                            "name": "ACTIVITY_FLEE_POKEMON",
+                            "id": 3
+                        },
+                        {
+                            "name": "ACTIVITY_DEFEAT_FORT",
+                            "id": 4
+                        },
+                        {
+                            "name": "ACTIVITY_EVOLVE_POKEMON",
+                            "id": 5
+                        },
+                        {
+                            "name": "ACTIVITY_HATCH_EGG",
+                            "id": 6
+                        },
+                        {
+                            "name": "ACTIVITY_WALK_KM",
+                            "id": 7
+                        },
+                        {
+                            "name": "ACTIVITY_POKEDEX_ENTRY_NEW",
+                            "id": 8
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_FIRST_THROW",
+                            "id": 9
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_NICE_THROW",
+                            "id": 10
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_GREAT_THROW",
+                            "id": 11
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_EXCELLENT_THROW",
+                            "id": 12
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_CURVEBALL",
+                            "id": 13
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_FIRST_CATCH_OF_DAY",
+                            "id": 14
+                        },
+                        {
+                            "name": "ACTIVITY_CATCH_MILESTONE",
+                            "id": 15
+                        },
+                        {
+                            "name": "ACTIVITY_TRAIN_POKEMON",
+                            "id": 16
+                        },
+                        {
+                            "name": "ACTIVITY_SEARCH_FORT",
+                            "id": 17
+                        },
+                        {
+                            "name": "ACTIVITY_RELEASE_POKEMON",
+                            "id": 18
+                        },
+                        {
+                            "name": "ACTIVITY_HATCH_EGG_SMALL_BONUS",
+                            "id": 19
+                        },
+                        {
+                            "name": "ACTIVITY_HATCH_EGG_MEDIUM_BONUS",
+                            "id": 20
+                        },
+                        {
+                            "name": "ACTIVITY_HATCH_EGG_LARGE_BONUS",
+                            "id": 21
+                        },
+                        {
+                            "name": "ACTIVITY_DEFEAT_GYM_DEFENDER",
+                            "id": 22
+                        },
+                        {
+                            "name": "ACTIVITY_DEFEAT_GYM_LEADER",
+                            "id": 23
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
