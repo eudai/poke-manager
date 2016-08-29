@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "postinstall": "node ./node_modules/bower/bin/bower install"
+	"host": "PORT=80 node index",
+    "postinstall": "node ./node_modules/bower/bin/bower install",
+	"cloud": "gcloud compute --project \"poke-manager-141720\" ssh --zone \"us-east1-c\" \"pokemon-manager\""
   },
   "repository": "https://github.com/eudai/poke-manager.git",
   "author": "Eudai",
