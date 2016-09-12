@@ -1,5 +1,5 @@
 {
-  "name": "pokebot",
+  "name": "poke-manager",
   "version": "1.0.0",
   "description": "manage your pokemon.",
   "main": "index.js",
